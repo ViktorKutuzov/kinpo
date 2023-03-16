@@ -1,12 +1,43 @@
 #include <iostream>
 #include <string>
 #include <map>
+#include <fstream>
 #include "functions.h"
 
-int main (void)
+int main (int argc, char* argv[])
 {
-	std::cout << "test";
+    std::string roman = {};
 
+    std::ifstream input;
+    std::ofstream output;
+    input.open(argv[1]);
+    output.open(argv[2]);
+
+    if (!output.is_open())
+    {
+        std::cout << "Output Error";
+        return 0;
+    }
+    if (!input.is_open())
+    {
+        output << "Input Error";
+    }
+    else
+    {
+        std::getline(input, roman);
+    }
+    input.close();
+    std::string romanNumerator = {};
+    std::string romanDenominator = {};
+    splitRoman(roman, romanNumerator, romanDenominator);
+    auto numerator = romanToInt(romanNumerator);
+    auto denominator = romanToInt(romanDenominator);
+    reduceFraction(&numerator, &denominator);
+    romanNumerator = intToRoman(numerator);
+    romanDenominator = intToRoman(denominator);
+    roman = createFraction(romanNumerator, romanDenominator);
+    output << roman;
+    output.close();
 	return 0;
 }
 
