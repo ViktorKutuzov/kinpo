@@ -2,10 +2,13 @@
 #include <string>
 #include <map>
 #include <fstream>
+#include <numeric>
 #include "functions.h"
+
 
 int main (int argc, char* argv[])
 {
+    setlocale(LC_CTYPE, "Russian");
     std::string roman = {};
 
     std::ifstream input;
@@ -15,28 +18,36 @@ int main (int argc, char* argv[])
 
     if (!output.is_open())
     {
-        std::cout << "Output Error";
+        std::cout << "Неверно указан файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись.";
         return 0;
     }
     if (!input.is_open())
     {
-        output << "Input Error";
+        output << "Неверно указан файл с входными данными. Возможно, файл не существует.";
     }
     else
     {
         std::getline(input, roman);
     }
     input.close();
+
     std::string romanNumerator = {};
     std::string romanDenominator = {};
+
     splitRoman(roman, romanNumerator, romanDenominator);
+
     auto numerator = romanToInt(romanNumerator);
     auto denominator = romanToInt(romanDenominator);
-    reduceFraction(&numerator, &denominator);
+
+    reduceFraction(numerator, denominator);
+
     romanNumerator = intToRoman(numerator);
     romanDenominator = intToRoman(denominator);
+
     roman = createFraction(romanNumerator, romanDenominator);
+
     output << roman;
+
     output.close();
 	return 0;
 }
@@ -66,29 +77,30 @@ std::string intToRoman(int number)
     return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + numbers[number % 10];
 }
 
-int gcd(int a, int b)
-{
-    return !b ? a : gcd(b, a % b);
-}
 
-void reduceFraction(int* numerator, int* denominator)
+//int gcd(int a, int b){ return !b ? a : gcd(b, a % b);}
+
+void reduceFraction(int& numerator, int& denominator)
 {
-    int divisor = gcd(*numerator, *denominator);
-    *numerator /= divisor;
-    *denominator /= divisor;
+    int divisor = std::gcd(numerator, denominator);
+    numerator /= divisor;
+    denominator /= divisor;
     return;
 }
 
 std::string createFraction(std::string romanNumerator, std::string romanDenominator)
 {
-    std::string test = "";
-    return test.append(romanNumerator).append("/").append(romanDenominator);
+    if (romanDenominator.compare("I"))
+        return romanNumerator + "/" + (romanDenominator);
+    //return romanNumerator.append("/").append(romanDenominator);
+
+    return romanNumerator;
 }
 
 void splitRoman(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
 {
     int slashIndex = romanString.find('/');
     romanNumerator = romanString.substr(0, slashIndex);
-    romanDenominator = romanString.substr(++slashIndex);
+    romanDenominator = romanString.substr(slashIndex);
     return;
 }
