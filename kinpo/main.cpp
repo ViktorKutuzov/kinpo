@@ -15,8 +15,6 @@ int main (int argc, char* argv[])
   setlocale(LC_CTYPE, "Russian");
 
   std::string roman = {};
-  std::ifstream input;
-  std::ofstream output;
 
   try
   {
@@ -27,23 +25,12 @@ int main (int argc, char* argv[])
     //input.open(argv[1]);
     //output.open(argv[2]);
     //readFile(argv[1], roman);
-    input.open("input.txt");
-    output.open("output.txt");
+    //input.open("input.txt");
+    //output.open("output.txt");
+    std::string inpath = "input.txt";
+    std::string outpath = "output.txt";
 
-    if (!output.is_open())
-    {
-      throw std::exception("Неверно указан файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись.");
-    }
-    if (!input.is_open())
-    {
-      throw std::exception("Неверно указан файл с входными данными. Возможно, файл не существует.");
-    }
-    else
-    {
-      input >> roman;
-      //std::getline(input, roman);
-    }
-    input.close();
+    readFile(inpath, roman);
 
     std::string romanNumerator = {};
     std::string romanDenominator = {};
@@ -60,9 +47,7 @@ int main (int argc, char* argv[])
 
     roman = createFraction(romanNumerator, romanDenominator);
 
-    output << roman;
-
-    output.close();
+    //writeToFile(outpath, roman);
     return 0;
   }
 
@@ -146,18 +131,18 @@ void readFile(std::string path, std::string& data)
   input.close();
 }
 
-void writeToFile(std::string path, std::string& data)
-{
-  std::ofstream output;
-  output.open(path);
-
-  if (!output.is_open())
-  {
-    throw std::exception("Неверно указан файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись.");
-  }
-  else
-  {
-    output << data;
-  }
-  output.close();
-}
+//void writeToFile(std::string path, std::string& data)
+//{
+//  std::ofstream output;
+//  output.open(path);
+//
+//  if (!output.is_open())
+//  {
+//    throw std::exception("Неверно указан файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись.");
+//  }
+//  else
+//  {
+//    output << data;
+//  }
+//  output.close();
+//}
