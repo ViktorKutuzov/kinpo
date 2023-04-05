@@ -47,7 +47,7 @@ int main (int argc, char* argv[])
 
     roman = createFraction(romanNumerator, romanDenominator);
 
-    //writeToFile(outpath, roman);
+    writeToFile(outpath, roman);
     return 0;
   }
 
@@ -81,9 +81,6 @@ std::string intToRoman(int number)
   thousands[4]           = { "","M","MM","MMM" };
   return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + digits[number % 10];
 }
-
-
-//int gcd(int a, int b){ return !b ? a : gcd(b, a % b);}
 
 void reduceFraction(int& numerator, int& denominator)
 {
@@ -131,18 +128,20 @@ void readFile(std::string path, std::string& data)
   input.close();
 }
 
-//void writeToFile(std::string path, std::string& data)
-//{
-//  std::ofstream output;
-//  output.open(path);
-//
-//  if (!output.is_open())
-//  {
-//    throw std::exception("Неверно указан файл для выходных данных. Возможно указанного расположения не существует или нет прав на запись.");
-//  }
-//  else
-//  {
-//    output << data;
-//  }
-//  output.close();
-//}
+void writeToFile(std::string path, std::string& data)
+{
+  std::ofstream output;
+  output.open(path);
+
+  if (!output.is_open())
+  {
+    throw std::exception("неверно указан файл для выходных данных. возможно указанного расположения не существует или нет прав на запись.");
+  }
+  else
+  {
+    output << data;
+  }
+  output.close();
+}
+
+//int gcd(int a, int b){ return !b ? a : gcd(b, a % b);} Своя функция gcd по алгоритму Евклида
