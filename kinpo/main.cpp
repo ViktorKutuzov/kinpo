@@ -143,4 +143,3 @@ std::string reduceFraction(const std::string& roman)
   std::string result = createFraction(romanNumerator, romanDenominator);
   return result;
 }
-//int gcd(int a, int b){ return !b ? a : gcd(b, a % b);} Своя функция gcd по алгоритму Евклида
