@@ -5,21 +5,14 @@
 \param[in] roman - римское число
 return десятичное число
 */
-int romanToInt(std::string roman);
+int romanToInt(const std::string& roman);
 
 /*!
 Переводит число из десятичной системы счисления в римскую
 \param[in] number - десятичное число
 \return римское число
 */
-std::string intToRoman(int number);
-
-/*!
-Сокращает десятичную дробь
-\param[in, out] numerator - числитель дроби
-\param[in, out] denominator - знаменатиель дроби
-*/
-void reduceFraction(int& numerator, int& denominator);
+std::string intToRoman(const int& number);
 
 /*!
 Создаёт дробь в римской системе счисления
@@ -27,7 +20,7 @@ void reduceFraction(int& numerator, int& denominator);
 \param[in] romanDenominator - знаменатиель дроби
 \return дробь в римской системе счисления
 */
-std::string createFraction(std::string romanNumerator, std::string romanDenominator);
+std::string createFraction(const std::string& romanNumerator, const std::string& romanDenominator);
 
 /*!
 Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель
@@ -43,11 +36,18 @@ void splitFraction(std::string romanString, std::string& romanNumerator, std::st
 \param[in] - путь к файлу
 \param[in, out] - данные
 */
-void readFile(std::string path, std::string& data);
+void readFile(const std::string path, std::string& data);
 
 /*!
 Записывает данные в файл
 \param[in] - путь к файлу
 \param[in, out] - данные
 */
-void writeToFile(std::string path, std::string& data);
+void writeToFile(const std::string path, std::string& data);
+
+/*!
+Главная функция. Проводит сокращение дроби
+\param[in] numerator - дробь в римской системе счисления
+\return сокращенная дробь
+*/
+std::string reduceFraction(const std::string& roman);

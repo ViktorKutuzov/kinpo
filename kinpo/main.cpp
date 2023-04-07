@@ -22,34 +22,15 @@ int main (int argc, char* argv[])
     //{
     //    throw std::exception("Не указаны расположения файлов с входными и выходными данными.");
     //}
-    //input.open(argv[1]);
-    //output.open(argv[2]);
-    //readFile(argv[1], roman);
-    //input.open("input.txt");
-    //output.open("output.txt");
-
 
     std::string inpath = "input.txt";
     std::string outpath = "output.txt";
 
     readFile(inpath, roman);
 
-    std::string romanNumerator = {};
-    std::string romanDenominator = {};
+    std::string result = reduceFraction(roman);
 
-    splitFraction(roman, romanNumerator, romanDenominator);
-
-    auto numerator = romanToInt(romanNumerator);
-    auto denominator = romanToInt(romanDenominator);
-
-    reduceFraction(numerator, denominator);
-
-    romanNumerator = intToRoman(numerator);
-    romanDenominator = intToRoman(denominator);
-
-    roman = createFraction(romanNumerator, romanDenominator);
-
-    writeToFile(outpath, roman);
+    writeToFile(outpath, result);
     return 0;
   }
 
@@ -59,7 +40,7 @@ int main (int argc, char* argv[])
   }
 }
 
-int romanToInt(std::string roman)
+int romanToInt(const std::string& roman)
 {
   int ans = 0;
   std::map <char, int> dictionary =
@@ -79,7 +60,7 @@ int romanToInt(std::string roman)
   return ans;
 }
 
-std::string intToRoman(int number)
+std::string intToRoman(const int& number)
 {
   std::string digits[10] = { "","I","II","III","IV","V","VI","VII","VIII","IX" },
   tens[10]               = { "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC" },
@@ -88,15 +69,7 @@ std::string intToRoman(int number)
   return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + digits[number % 10];
 }
 
-void reduceFraction(int& numerator, int& denominator)
-{
-  int divisor = std::gcd(numerator, denominator);
-  numerator /= divisor;
-  denominator /= divisor;
-  return;
-}
-
-std::string createFraction(std::string romanNumerator, std::string romanDenominator)
+std::string createFraction(const std::string& romanNumerator, const std::string& romanDenominator)
 {
   if (romanDenominator == "I")
     return romanNumerator;
@@ -119,7 +92,7 @@ void splitFraction(std::string romanString, std::string& romanNumerator, std::st
   return;
 }
 
-void readFile(std::string path, std::string& data)
+void readFile(const std::string path, std::string& data)
 {
   std::ifstream input;
   input.open(path);
@@ -134,7 +107,7 @@ void readFile(std::string path, std::string& data)
   input.close();
 }
 
-void writeToFile(std::string path, std::string& data)
+void writeToFile(const std::string path, std::string& data)
 {
   std::ofstream output;
   output.open(path);
@@ -150,4 +123,24 @@ void writeToFile(std::string path, std::string& data)
   output.close();
 }
 
+std::string reduceFraction(const std::string& roman)
+{
+  std::string romanNumerator = {};
+  std::string romanDenominator = {};
+
+  splitFraction(roman, romanNumerator, romanDenominator);
+
+  int numerator = romanToInt(romanNumerator);
+  int denominator = romanToInt(romanDenominator);
+
+  int divisor = std::gcd(numerator, denominator);
+  numerator /= divisor;
+  denominator /= divisor;
+
+  romanNumerator = intToRoman(numerator);
+  romanDenominator = intToRoman(denominator);
+
+  std::string result = createFraction(romanNumerator, romanDenominator);
+  return result;
+}
 //int gcd(int a, int b){ return !b ? a : gcd(b, a % b);} Своя функция gcd по алгоритму Евклида
