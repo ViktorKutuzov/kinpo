@@ -36,7 +36,7 @@ std::string createFraction(std::string romanNumerator, std::string romanDenomina
 \param[in, out] romanDenominator - знаменатиель дроби
 \return
 */
-void splitRoman(std::string romanString, std::string& romanNumerator, std::string& romanDenominator);
+void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
 Читает данные из файла

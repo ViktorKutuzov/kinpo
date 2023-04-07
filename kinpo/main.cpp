@@ -27,6 +27,8 @@ int main (int argc, char* argv[])
     //readFile(argv[1], roman);
     //input.open("input.txt");
     //output.open("output.txt");
+
+
     std::string inpath = "input.txt";
     std::string outpath = "output.txt";
 
@@ -35,7 +37,7 @@ int main (int argc, char* argv[])
     std::string romanNumerator = {};
     std::string romanDenominator = {};
 
-    splitRoman(roman, romanNumerator, romanDenominator);
+    splitFraction(roman, romanNumerator, romanDenominator);
 
     auto numerator = romanToInt(romanNumerator);
     auto denominator = romanToInt(romanDenominator);
@@ -65,11 +67,15 @@ int romanToInt(std::string roman)
 
   for (size_t i = 0; i < roman.size(); ++i)
   {
-    if (dictionary[roman[i]] < dictionary[roman[i + 1]]) 
+    if (!dictionary[roman[i]])
+      throw std::exception("Ќеопознанный символ");
+    if (dictionary[roman[i]] < dictionary[roman[i + 1]] && i < roman.size() - 1)  
       ans -= dictionary[roman[i]];
     else
       ans += dictionary[roman[i]];
   }
+  if (roman != intToRoman(ans))
+    throw std::exception("Ќеправильна€ запись числа");
   return ans;
 }
 
@@ -97,7 +103,7 @@ std::string createFraction(std::string romanNumerator, std::string romanDenomina
   return romanNumerator + "/" + (romanDenominator);
 }
 
-void splitRoman(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
+void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
 {
   if (!romanString.size())
     throw std::exception("Ќет входных данных");
@@ -135,7 +141,7 @@ void writeToFile(std::string path, std::string& data)
 
   if (!output.is_open())
   {
-    throw std::exception("неверно указан файл дл€ выходных данных. возможно указанного расположени€ не существует или нет прав на запись.");
+    throw std::exception("Ќеверно указан файл дл€ выходных данных. возможно указанного расположени€ не существует или нет прав на запись.");
   }
   else
   {
