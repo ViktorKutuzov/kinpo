@@ -15,14 +15,6 @@ int romanToInt(const std::string& roman);
 std::string intToRoman(const int& number);
 
 /*!
-Создаёт дробь в римской системе счисления
-\param[in] romanNumerator - числитель дроби
-\param[in] romanDenominator - знаменатиель дроби
-\return дробь в римской системе счисления
-*/
-std::string createFraction(const std::string& romanNumerator, const std::string& romanDenominator);
-
-/*!
 Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель
 \param[in] romanString дробь в римской системе счисления
 \param[in, out] romanNumerator - числитель дроби

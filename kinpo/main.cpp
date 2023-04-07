@@ -69,13 +69,6 @@ std::string intToRoman(const int& number)
   return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + digits[number % 10];
 }
 
-std::string createFraction(const std::string& romanNumerator, const std::string& romanDenominator)
-{
-  if (romanDenominator == "I")
-    return romanNumerator;
-  return romanNumerator + "/" + (romanDenominator);
-}
-
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
 {
   if (!romanString.size())
@@ -140,6 +133,7 @@ std::string reduceFraction(const std::string& roman)
   romanNumerator = intToRoman(numerator);
   romanDenominator = intToRoman(denominator);
 
-  std::string result = createFraction(romanNumerator, romanDenominator);
-  return result;
+  if (romanDenominator == "I")
+    return romanNumerator;
+  return romanNumerator + "/" + (romanDenominator);
 }
