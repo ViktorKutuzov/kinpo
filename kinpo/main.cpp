@@ -42,46 +42,51 @@ int main (int argc, char* argv[])
 
 int romanToInt(const std::string& roman)
 {
-  int ans = 0;
+  int ans{};
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
 
-  for (size_t i = 0; i < roman.size(); ++i)
+  for (size_t i{}; i < roman.size(); ++i)
   {
     if (!dictionary[roman[i]])
-      throw std::exception("Неопознанный символ");
+      throw std::exception("Строка содержит неопознанный символ.");
     if (dictionary[roman[i]] < dictionary[roman[i + 1]] && i < roman.size() - 1)  
       ans -= dictionary[roman[i]];
     else
       ans += dictionary[roman[i]];
   }
+  if (ans > 3999 || ans <= 0)
+    throw std::exception("Неверный формат  римского числа. Ознакомьтесь с правилами перевода в римскую систему счисления.");
   if (roman != intToRoman(ans))
-    throw std::exception("Неправильная запись числа");
+    throw std::exception("Неверный формат  римского числа. Ознакомьтесь с правилами перевода в римскую систему счисления.");
   return ans;
 }
 
 std::string intToRoman(const int& number)
 {
-  std::string digits[10] = { "","I","II","III","IV","V","VI","VII","VIII","IX" },
-  tens[10]               = { "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC" },
-  hundreds[10]           = { "","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"},
-  thousands[4]           = { "","M","MM","MMM" };
-  return thousands[number / 1000] + hundreds[(number % 1000) / 100] + tens[(number % 100) / 10] + digits[number % 10];
+
+  std::string digits[10] {"","I","II","III","IV","V","VI","VII","VIII","IX"},
+  tens[10]               {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"},
+  hundreds[10]           {"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"},
+  thousands[4]           {"","M","MM","MMM"};
+
+  return thousands[number / 1000] + hundreds[(number % 1000) / 100]
+    + tens[(number % 100) / 10] + digits[number % 10];
 }
 
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
 {
   if (!romanString.size())
-    throw std::exception("Нет входных данных");
+    throw std::exception("Отсутствуют входные данные.");
   size_t slashIndex = romanString.find('/');
   if (slashIndex == std::string::npos)
-    throw std::exception("Отсутствует символ разделителя. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами");
+    throw std::exception("Отсутствует символ разделителя. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
   romanNumerator = romanString.substr(0, slashIndex);
   if (!romanNumerator.size())
-    throw std::exception("Отсутствует числитель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами");
+    throw std::exception("Отсутствует числитель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
   romanDenominator = romanString.substr(slashIndex + 1);
   if (!romanDenominator.size())
-    throw std::exception("Отсутствует знаменатель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами");
+    throw std::exception("Отсутствует знаменатель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
   return;
 }
 
