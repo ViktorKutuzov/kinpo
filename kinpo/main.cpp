@@ -177,13 +177,13 @@ std::string reduceFraction(const std::string& roman)
   if (denominatorErrors.size())
   {
     error = true;
-    std::cout << "Числитель дроби содержит ошибки следующие в записи:" << std::endl;
+    std::cout << "Числитель дроби содержит следующие ошибки в записи:" << std::endl;
     for (const auto& i : denominatorErrors)
       std::cout << i << std::endl;
   }
-
   if (error)
-    throw 1;
+    throw std::exception(" ");
+
 
   int divisor = std::gcd(numerator, denominator);
   numerator /= divisor;
