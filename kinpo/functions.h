@@ -3,9 +3,10 @@
 /*!
 Переводит число из римской системы счисления в десятичную
 \param[in] roman - римское число
+\param[in, out] errors - массив содержащий сообщения об ошибках
 return десятичное число
 */
-int romanToInt(const std::string& roman);
+int romanToInt(const std::string& roman, std::vector<std::string>& errors);
 
 /*!
 Переводит число из десятичной системы счисления в римскую

@@ -3,6 +3,7 @@
 #include <map>
 #include <fstream>
 #include <numeric>
+#include <vector>
 #include "functions.h"
 
 
@@ -38,27 +39,58 @@ int main (int argc, char* argv[])
   {
     std::cout << ex.what() << std::endl;
   }
+  catch (...)
+  {
+
+  }
 }
 
-int romanToInt(const std::string& roman)
+int romanToInt(const std::string& roman, std::vector<std::string>& errors)
 {
   int ans{};
+  // MMMDCCCLXXXVIII - 3888
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
+  bool error = false;
 
+  if (roman.size() > 15)
+  {
+    errors.push_back("Римское число не может быть длиннее 15 символов.");
+    return 0;
+  }
   for (size_t i{}; i < roman.size(); ++i)
   {
     if (!dictionary[roman[i]])
-      throw std::exception("Строка содержит неопознанный символ.");
+    {
+      error = true;
+      errors.push_back("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
+    }
+  }
+
+  if (error)
+    return 0;
+
+  for (size_t i{}; i < roman.size(); ++i)
+  {
     if (dictionary[roman[i]] < dictionary[roman[i + 1]] && i < roman.size() - 1)  
       ans -= dictionary[roman[i]];
     else
       ans += dictionary[roman[i]];
   }
-  if (ans > 3999 || ans <= 0)
-    throw std::exception("Неверный формат  римского числа. Ознакомьтесь с правилами перевода в римскую систему счисления.");
+
+  if (ans <= 0)
+  {
+    errors.push_back("Римское число не может меньше 1.");
+    return 0;
+  }
+  if (ans > 3999)
+  {
+    errors.push_back("Римское число не может больше 3999.");
+    return 0;
+  }
+
   if (roman != intToRoman(ans))
-    throw std::exception("Неверный формат  римского числа. Ознакомьтесь с правилами перевода в римскую систему счисления.");
+    errors.push_back("Римское число имеет неверный формат. Возможно, вы имели в виду число " + intToRoman(ans) + " ?");
   return ans;
 }
 
@@ -128,8 +160,29 @@ std::string reduceFraction(const std::string& roman)
 
   splitFraction(roman, romanNumerator, romanDenominator);
 
-  int numerator = romanToInt(romanNumerator);
-  int denominator = romanToInt(romanDenominator);
+  std::vector<std::string> numeratorErrors, denominatorErrors;
+  bool error = false;
+
+  int numerator = romanToInt(romanNumerator, numeratorErrors);
+  if (numeratorErrors.size())
+  {
+    bool error = true;
+    std::cout << "Знаменатель дроби содержит следующие ошибки в записи:" << std::endl;
+    for (const auto& i : numeratorErrors)
+      std::cout << i << std::endl;
+    std::cout << std::endl;
+  }
+
+  int denominator = romanToInt(romanDenominator, denominatorErrors);
+  if (denominatorErrors.size())
+  {
+    bool error = true;
+    std::cout << "Числитель дроби содержит ошибки следующие в записи:" << std::endl;
+    for (const auto& i : denominatorErrors)
+      std::cout << i << std::endl;
+  }
+  if (error)
+    throw 1;
 
   int divisor = std::gcd(numerator, denominator);
   numerator /= divisor;
