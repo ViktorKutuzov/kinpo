@@ -166,7 +166,7 @@ std::string reduceFraction(const std::string& roman)
   int numerator = romanToInt(romanNumerator, numeratorErrors);
   if (numeratorErrors.size())
   {
-    bool error = true;
+    error = true;
     std::cout << "Знаменатель дроби содержит следующие ошибки в записи:" << std::endl;
     for (const auto& i : numeratorErrors)
       std::cout << i << std::endl;
@@ -176,11 +176,12 @@ std::string reduceFraction(const std::string& roman)
   int denominator = romanToInt(romanDenominator, denominatorErrors);
   if (denominatorErrors.size())
   {
-    bool error = true;
+    error = true;
     std::cout << "Числитель дроби содержит ошибки следующие в записи:" << std::endl;
     for (const auto& i : denominatorErrors)
       std::cout << i << std::endl;
   }
+
   if (error)
     throw 1;
 
