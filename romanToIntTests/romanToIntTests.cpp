@@ -1,10 +1,9 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include <string.h>
 #include "../kinpo/functions.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
+using namespace std;
 namespace romanToIntTests
 {
 	TEST_CLASS(romanToIntTests)
@@ -13,16 +12,18 @@ namespace romanToIntTests
 		
 		TEST_METHOD(True)
 		{
-			std::string roman = "I";
+			vector<string> errors;
+			string roman = "I";
 			int expResult = 1;
-			int result = romanToInt(roman);
+			int result = romanToInt(roman, errors);
 			Assert::AreEqual(expResult, result);
 		}
 		TEST_METHOD(False)
 		{
-			std::string roman = "I";
+			vector<string> errors;
+			string roman = "I";
 			int expResult = 1;
-			int result = romanToInt(roman);
+			int result = romanToInt(roman, errors);
 			Assert::AreEqual(expResult, result);
 		}
 	};

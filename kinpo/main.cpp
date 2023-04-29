@@ -1,11 +1,4 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <fstream>
-#include <numeric>
-#include <vector>
 #include "functions.h"
-
 
 int main (int argc, char* argv[])
 {
