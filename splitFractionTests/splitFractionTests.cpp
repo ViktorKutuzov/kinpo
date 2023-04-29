@@ -14,10 +14,10 @@ namespace splitFractionTests
 		TEST_METHOD(TestMethod1)
 		{
 			string roman = "X/II",
-			romanNumerator = {},
-			romanDenominator = {},
-			expNumerator = "X",
-			expDenominator = "II";
+				romanNumerator = {},
+				romanDenominator = {},
+				expNumerator = "X",
+				expDenominator = "II";
 			splitFraction(roman, romanNumerator, romanDenominator);
 			Assert::AreEqual(expNumerator, romanNumerator);
 			Assert::AreEqual(expDenominator, romanDenominator);
