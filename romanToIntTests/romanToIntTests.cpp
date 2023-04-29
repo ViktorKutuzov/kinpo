@@ -4,6 +4,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
+
 namespace romanToIntTests
 {
 	TEST_CLASS(romanToIntTests)
