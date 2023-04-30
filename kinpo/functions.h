@@ -25,7 +25,7 @@ std::string intToRoman(const int& number);
 \param[in] romanString дробь в римской системе счисления
 \param[in, out] romanNumerator - числитель дроби
 \param[in, out] romanDenominator - знаменатиель дроби
-\return
+\throw - (Выбрасывает исключения в ошибочных входных данных)
 */
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator);
 
