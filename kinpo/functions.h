@@ -5,6 +5,7 @@
 #include <fstream>
 #include <numeric>
 #include <vector>
+
 /*!
 Переводит число из римской системы счисления в десятичную
 \param[in] roman - римское число
