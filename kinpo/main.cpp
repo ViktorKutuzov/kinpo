@@ -38,6 +38,12 @@ int main (int argc, char* argv[])
   }
 }
 
+void findError(const std::string& roman, std::vector<std::string>& errors) 
+{
+
+  return;
+}
+
 int romanToInt(const std::string& roman, std::vector<std::string>& errors)
 {
   int ans{};

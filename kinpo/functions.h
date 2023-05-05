@@ -46,7 +46,14 @@ void writeToFile(const std::string path, std::string& data);
 
 /*!
 Главная функция. Проводит сокращение дроби
-\param[in] numerator - дробь в римской системе счисления
+\param[in] roman - дробь в римской системе счисления
 \return сокращенная дробь
 */
 std::string reduceFraction(const std::string& roman);
+
+/*!
+Нахождит ошибку в записи римского числа
+\param[in] roman - римское число
+\param[in, out] errors - массив содержащий сообщения об ошибках
+*/
+void findError(const std::string& roman, std::vector<std::string>& errors);
