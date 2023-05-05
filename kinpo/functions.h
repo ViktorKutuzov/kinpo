@@ -52,7 +52,7 @@ void writeToFile(const std::string path, std::string& data);
 std::string reduceFraction(const std::string& roman);
 
 /*!
-Нахождит ошибку в записи римского числа
+Находит ошибку в записи римского числа
 \param[in] roman - римское число
 \param[in, out] errors - массив содержащий сообщения об ошибках
 */

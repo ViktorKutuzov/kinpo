@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "CppUnitTest.h"
-#include <string.h>
 #include "../kinpo/functions.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
