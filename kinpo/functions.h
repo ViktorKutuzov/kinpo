@@ -10,6 +10,7 @@
 Переводит число из римской системы счисления в десятичную
 \param[in] roman - римское число
 \param[in, out] errors - массив содержащий сообщения об ошибках
+\throw - (Выбрасывает исключения в ошибочных входных данных)
 return десятичное число
 */
 int romanToInt(const std::string& roman, std::vector<std::string>& errors);
@@ -48,6 +49,7 @@ void writeToFile(const std::string path, std::string& data);
 Главная функция. Проводит сокращение дроби
 \param[in] roman - дробь в римской системе счисления
 \return сокращенная дробь
+\throw - (Выбрасывает исключения в ошибочных входных данных)
 */
 std::string reduceFraction(const std::string& roman);
 
