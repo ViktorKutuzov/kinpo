@@ -58,4 +58,4 @@ std::string reduceFraction(const std::string& roman);
 \param[in] roman - римское число
 \param[in, out] errors - массив содержащий сообщения об ошибках
 */
-void findError(const std::string& roman, std::vector<std::string>& errors);
+std::string checkNumber(const std::string roman);
