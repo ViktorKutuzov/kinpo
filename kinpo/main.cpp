@@ -2,30 +2,6 @@
 
 int main (int argc, char* argv[])
 {
-  //accelerator
-  std::ios::sync_with_stdio(0);
-  std::cin.tie(0);
-  std::cout.tie(0);
-  setlocale(LC_CTYPE, "Russian");
-
-
-  std::string r;
-  std::cin >> r;
-  std::vector<std::string> er;
-
-  for (const auto& i : er)
-  {
-    std::cout << i << std::endl;
-  }
-  if (er.size() == 0)
-  {
-    std::cout << "No errors found" << std::endl;
-  }
-
-  std::cout << "========END OF TEST========" << std::endl;
-
-  std::string roman = {};
-
   try
   {
     //if (argv[1] == NULL || argv[2] == NULL) 
@@ -33,19 +9,26 @@ int main (int argc, char* argv[])
     //    throw std::exception("Не указаны расположения файлов с входными и выходными данными.");
     //}
 
+    std::string roman = {};
     std::string inpath = "input.txt";
     std::string outpath = "output.txt";
 
     readFile(inpath, roman);
 
+    // Переменные для числителя и знаменателя
     std::string romanNumerator = {};
     std::string romanDenominator = {};
 
+    // Разделяем дробь на числитель и знаменатель
     splitFraction(roman, romanNumerator, romanDenominator);
 
-    std::string result = reduceFraction(roman);
+    std::cout << "Числитель дроби содержит следующие ошибки в записи:" << std::endl;
+
+
+    std::string result = reduceFraction(romanNumerator, romanDenominator);
 
     writeToFile(outpath, result);
+
     return 0;
   }
 
@@ -64,7 +47,6 @@ int romanToInt(const std::string& roman)
   int ans{};
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
-  bool error = false;
 
   for (size_t i{}; i < roman.size(); ++i)
   {
@@ -139,7 +121,7 @@ void writeToFile(const std::string path, std::string& data)
   output.close();
 }
 
-std::string checkNumber(const std::string roman)
+std::string checkNumber(const std::string& roman)
 {
   if (roman.size() > 15) // MMMDC CCLXX XVIII - 3888
     return "Длина числа не может быть больше 15 символов.";
@@ -174,45 +156,22 @@ std::string checkNumber(const std::string roman)
   return "";
 }
 
-std::string reduceFraction(const std::string& roman)
+std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator)
 {
-  std::string romanNumerator = {};
-  std::string romanDenominator = {};
-
-  splitFraction(roman, romanNumerator, romanDenominator);
-
-  std::vector<std::string> numeratorErrors, denominatorErrors;
-  bool error = false;
-
+  // Переводим римские числа в десятичные
   int numerator = romanToInt(romanNumerator);
-  if (numeratorErrors.size())
-  {
-    error = true;
-    std::cout << "Знаменатель дроби содержит следующие ошибки в записи:" << std::endl;
-    for (const auto& i : numeratorErrors)
-      std::cout << i << std::endl;
-    std::cout << std::endl;
-  }
-
   int denominator = romanToInt(romanDenominator);
-  if (denominatorErrors.size())
-  {
-    error = true;
-    std::cout << "Числитель дроби содержит следующие ошибки в записи:" << std::endl;
-    for (const auto& i : denominatorErrors)
-      std::cout << i << std::endl;
-  }
-  if (error)
-    throw std::exception(" ");
 
-
+  // Находим НОД и сокращаем дробь
   int divisor = std::gcd(numerator, denominator);
   numerator /= divisor;
   denominator /= divisor;
 
+  // Переводим число в римскую систему счисления
   romanNumerator = intToRoman(numerator);
   romanDenominator = intToRoman(denominator);
 
+  // Создаём новую дробь
   if (romanDenominator == "I")
     return romanNumerator;
   return romanNumerator + "/" + (romanDenominator);

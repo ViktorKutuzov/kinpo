@@ -51,7 +51,8 @@ void writeToFile(const std::string path, std::string& data);
 \return сокращенная дробь
 \throw - (Выбрасывает исключения в ошибочных входных данных)
 */
-std::string reduceFraction(const std::string& roman);
+
+std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
 Проверить число на ошибки
