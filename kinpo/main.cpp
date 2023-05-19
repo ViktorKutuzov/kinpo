@@ -12,7 +12,6 @@ int main (int argc, char* argv[])
   std::string r;
   std::cin >> r;
   std::vector<std::string> er;
-  findError(r, er);
 
   for (const auto& i : er)
   {
@@ -55,30 +54,13 @@ int main (int argc, char* argv[])
   }
 }
 
-int romanToInt(const std::string& roman, std::vector<std::string>& errors)
+int romanToInt(const std::string& roman)
 {
   int ans{};
   // MMMDC CCLXX XVIII - 3888
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
   bool error = false;
-
-  if (roman.size() > 15)
-  {
-    errors.push_back("Римское число не может быть длиннее 15 символов.");
-    return 0;
-  }
-  for (size_t i{}; i < roman.size(); ++i)
-  {
-    if (!dictionary[roman[i]])
-    {
-      error = true;
-      errors.push_back("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
-    }
-  }
-
-  if (error)
-    return 0;
 
   for (size_t i{}; i < roman.size(); ++i)
   {
@@ -88,19 +70,6 @@ int romanToInt(const std::string& roman, std::vector<std::string>& errors)
       ans += dictionary[roman[i]];
   }
 
-  if (ans <= 0)
-  {
-    errors.push_back("Римское число не может меньше 1.");
-    return 0;
-  }
-  if (ans > 3999)
-  {
-    errors.push_back("Римское число не может больше 3999.");
-    return 0;
-  }
-
-  if (roman != intToRoman(ans))
-    errors.push_back("Римское число имеет неверный формат. Возможно, вы имели в виду число " + intToRoman(ans) + " ?");
   return ans;
 }
 
@@ -173,7 +142,7 @@ std::string reduceFraction(const std::string& roman)
   std::vector<std::string> numeratorErrors, denominatorErrors;
   bool error = false;
 
-  int numerator = romanToInt(romanNumerator, numeratorErrors);
+  int numerator = romanToInt(romanNumerator);
   if (numeratorErrors.size())
   {
     error = true;
@@ -183,7 +152,7 @@ std::string reduceFraction(const std::string& roman)
     std::cout << std::endl;
   }
 
-  int denominator = romanToInt(romanDenominator, denominatorErrors);
+  int denominator = romanToInt(romanDenominator);
   if (denominatorErrors.size())
   {
     error = true;
@@ -212,12 +181,39 @@ std::string checkNumber(const std::string roman)
   if (roman.size() > 15)
     return "Длина числа не может быть больше 15 символов.";
 
+  std::map <char, int> dictionary =
+  { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
 
-  std::string temp = "";
-  for (size_t i = 0; i < roman.size(); ++i)
+  for (size_t i{}; i < roman.size(); ++i)
   {
-    temp.push_back(roman[i]);
+    if (!dictionary[roman[i]])
+    {
+      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
+    }
+  }
+
+  std::string romanNumber = "";
+  romanNumber.push_back(roman[0]);
+  for (size_t i = 1; i < roman.size(); ++i)
+  {
+    romanNumber.push_back(roman[i]);
+
     //if (temp != intToRoman(romanToInt(temp));
+
+    int decimalNumber = romanToInt(romanNumber);
+    if (ans <= 0)
+    {
+      errors.push_back("Римское число не может меньше 1.");
+      return 0;
+    }
+    if (ans > 3999)
+    {
+      errors.push_back("Римское число не может больше 3999.");
+      return 0;
+    }
+
+    if (roman != intToRoman(ans))
+      errors.push_back("Римское число имеет неверный формат. Возможно, вы имели в виду число " + intToRoman(ans) + " ?");
   }
   return "";
 }

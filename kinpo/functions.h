@@ -13,7 +13,7 @@
 \throw - (Выбрасывает исключения в ошибочных входных данных)
 return десятичное число
 */
-int romanToInt(const std::string& roman, std::vector<std::string>& errors);
+int romanToInt(const std::string& roman);
 
 /*!
 Переводит число из десятичной системы счисления в римскую
@@ -58,4 +58,4 @@ std::string reduceFraction(const std::string& roman);
 \param[in] roman - римское число
 \return результат проверки числа
 */
-std::string checkNumber(const std::string roman);
+std::string checkNumber(const std::string& roman);
