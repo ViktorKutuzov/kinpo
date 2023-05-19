@@ -62,7 +62,6 @@ int main (int argc, char* argv[])
 int romanToInt(const std::string& roman)
 {
   int ans{};
-  // MMMDC CCLXX XVIII - 3888
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
   bool error = false;
@@ -80,11 +79,10 @@ int romanToInt(const std::string& roman)
 
 std::string intToRoman(const int& number)
 {
-
-  std::string digits[10] {"","I","II","III","IV","V","VI","VII","VIII","IX"},
-  tens[10]               {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"},
-  hundreds[10]           {"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"},
-  thousands[4]           {"","M","MM","MMM"};
+  std::vector<std::string> digits { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" },
+  tens                            { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" },
+  hundreds                        { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" },
+  thousands                       { "", "M", "MM", "MMM" };
 
   return thousands[number / 1000] + hundreds[(number % 1000) / 100]
     + tens[(number % 100) / 10] + digits[number % 10];
@@ -94,15 +92,19 @@ void splitFraction(std::string romanString, std::string& romanNumerator, std::st
 {
   if (!romanString.size())
     throw std::exception("ќтсутствуют входные данные.");
+
   size_t slashIndex = romanString.find('/');
   if (slashIndex == std::string::npos)
     throw std::exception("ќтсутствует символ разделител€. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.");
+
   romanNumerator = romanString.substr(0, slashIndex);
   if (!romanNumerator.size())
-    throw std::exception("ќтсутствует числитель дроби. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.");
+    throw std::exception("ќтсутствует числитель дроби. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.");\
+
   romanDenominator = romanString.substr(slashIndex + 1);
   if (!romanDenominator.size())
     throw std::exception("ќтсутствует знаменатель дроби. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.");
+
   return;
 }
 
@@ -135,6 +137,41 @@ void writeToFile(const std::string path, std::string& data)
     output << data;
   }
   output.close();
+}
+
+std::string checkNumber(const std::string roman)
+{
+  if (roman.size() > 15) // MMMDC CCLXX XVIII - 3888
+    return "ƒлина числа не может быть больше 15 символов.";
+
+  std::map <char, int> dictionary =
+  { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
+
+  for (size_t i{}; i < roman.size(); ++i)
+  {
+    if (!dictionary[roman[i]])
+    {
+      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан");
+    }
+  }
+
+  std::string romanNumber = "";
+  for (size_t i = 0; i < roman.size(); ++i)
+  {
+    romanNumber.push_back(roman[i]);
+
+    int decimalNumber = romanToInt(romanNumber);
+    if (decimalNumber > 3999 || decimalNumber < 1)
+    {
+      return "—имвол " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
+    }
+
+    if (roman != intToRoman(decimalNumber))
+    {
+      return "—имвол " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
+    }
+  }
+  return "";
 }
 
 std::string reduceFraction(const std::string& roman)
@@ -179,39 +216,4 @@ std::string reduceFraction(const std::string& roman)
   if (romanDenominator == "I")
     return romanNumerator;
   return romanNumerator + "/" + (romanDenominator);
-}
-
-std::string checkNumber(const std::string roman)
-{
-  if (roman.size() > 15)
-    return "ƒлина числа не может быть больше 15 символов.";
-
-  std::map <char, int> dictionary =
-  { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
-
-  for (size_t i{}; i < roman.size(); ++i)
-  {
-    if (!dictionary[roman[i]])
-    {
-      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан");
-    }
-  }
-
-  std::string romanNumber = "";
-  for (size_t i = 0; i < roman.size(); ++i)
-  {
-    romanNumber.push_back(roman[i]);
-
-    int decimalNumber = romanToInt(romanNumber);
-    if (decimalNumber > 3999 || decimalNumber < 1)
-    {
-      return "—имвол " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
-    }
-
-    if (roman != intToRoman(decimalNumber))
-    {
-      return "—имвол " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
-    }
-  }
-  return "";
 }
