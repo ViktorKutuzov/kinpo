@@ -13,6 +13,7 @@ int main (int argc, char* argv[])
     std::string inpath = "input.txt";
     std::string outpath = "output.txt";
 
+    // Считываем данные из входного файла
     readFile(inpath, roman);
 
     // Переменные для числителя и знаменателя
@@ -22,11 +23,24 @@ int main (int argc, char* argv[])
     // Разделяем дробь на числитель и знаменатель
     splitFraction(roman, romanNumerator, romanDenominator);
 
-    std::cout << "Числитель дроби содержит следующие ошибки в записи:" << std::endl;
+    // Проверяем числитель на корректность
+    std::string error = checkNumber(romanNumerator);
+    if (error.size())
+    {
+      throw "Числитель содержит ошибку в записи. " + error;
+    }
 
+    // Проверяем знаменатель на корректность
+    error = checkNumber(romanDenominator);
+    if (error.size())
+    {
+      throw "Знаменатель содержит ошибку в записи. " + error;
+    }
 
+    // Сокращаем дробь
     std::string result = reduceFraction(romanNumerator, romanDenominator);
 
+    // Записываем данные в выходной файл
     writeToFile(outpath, result);
 
     return 0;
