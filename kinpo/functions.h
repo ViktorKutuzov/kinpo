@@ -54,8 +54,8 @@ void writeToFile(const std::string path, std::string& data);
 std::string reduceFraction(const std::string& roman);
 
 /*!
-Находит ошибку в записи римского числа
+Проверить число на ошибки
 \param[in] roman - римское число
-\param[in, out] errors - массив содержащий сообщения об ошибках
+\return результат проверки числа
 */
 std::string checkNumber(const std::string roman);

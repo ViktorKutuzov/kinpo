@@ -58,7 +58,7 @@ int main (int argc, char* argv[])
 int romanToInt(const std::string& roman, std::vector<std::string>& errors)
 {
   int ans{};
-  // MMMDCCCLXXXVIII - 3888
+  // MMMDC CCLXX XVIII - 3888
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} };
   bool error = false;
@@ -209,5 +209,15 @@ std::string reduceFraction(const std::string& roman)
 
 std::string checkNumber(const std::string roman)
 {
+  if (roman.size() > 15)
+    return "Длина числа не может быть больше 15 символов.";
 
+
+  std::string temp = "";
+  for (size_t i = 0; i < roman.size(); ++i)
+  {
+    temp.push_back(roman[i]);
+    //if (temp != intToRoman(romanToInt(temp));
+  }
+  return "";
 }
