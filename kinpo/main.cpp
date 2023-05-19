@@ -38,6 +38,11 @@ int main (int argc, char* argv[])
 
     readFile(inpath, roman);
 
+    std::string romanNumerator = {};
+    std::string romanDenominator = {};
+
+    splitFraction(roman, romanNumerator, romanDenominator);
+
     std::string result = reduceFraction(roman);
 
     writeToFile(outpath, result);
@@ -64,7 +69,7 @@ int romanToInt(const std::string& roman)
 
   for (size_t i{}; i < roman.size(); ++i)
   {
-    if (dictionary[roman[i]] < dictionary[roman[i + 1]] && i < roman.size() - 1)  
+    if ((i + 1 < roman.size()) && (dictionary[roman[i]] < dictionary[roman[i + 1]]))
       ans -= dictionary[roman[i]];
     else
       ans += dictionary[roman[i]];
@@ -188,32 +193,25 @@ std::string checkNumber(const std::string roman)
   {
     if (!dictionary[roman[i]])
     {
-      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
+      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан");
     }
   }
 
   std::string romanNumber = "";
-  romanNumber.push_back(roman[0]);
-  for (size_t i = 1; i < roman.size(); ++i)
+  for (size_t i = 0; i < roman.size(); ++i)
   {
     romanNumber.push_back(roman[i]);
 
-    //if (temp != intToRoman(romanToInt(temp));
-
     int decimalNumber = romanToInt(romanNumber);
-    if (ans <= 0)
+    if (decimalNumber > 3999 || decimalNumber < 1)
     {
-      errors.push_back("Римское число не может меньше 1.");
-      return 0;
-    }
-    if (ans > 3999)
-    {
-      errors.push_back("Римское число не может больше 3999.");
-      return 0;
+      return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
     }
 
-    if (roman != intToRoman(ans))
-      errors.push_back("Римское число имеет неверный формат. Возможно, вы имели в виду число " + intToRoman(ans) + " ?");
+    if (roman != intToRoman(decimalNumber))
+    {
+      return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
+    }
   }
   return "";
 }
