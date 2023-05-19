@@ -5,7 +5,7 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace std;
 
-namespace checkNumber
+namespace checkNumberTests
 {
 	TEST_CLASS(findErrorTests)
 	{

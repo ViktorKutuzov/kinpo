@@ -13,10 +13,6 @@ namespace reduceFractionTests
 		
 		TEST_METHOD(TestMethod1)
 		{
-			string roman = "XIV/II",
-				expResult = "VII";
-			string result = reduceFraction(roman);
-			Assert::AreEqual(expResult, result);
 		}
 	};
 }

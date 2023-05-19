@@ -2,6 +2,7 @@
 
 int main (int argc, char* argv[])
 {
+  setlocale(LC_ALL, "Russian"); // Русская локализация консоли
   try
   {
     //if (argv[1] == NULL || argv[2] == NULL) 
@@ -25,16 +26,16 @@ int main (int argc, char* argv[])
 
     // Проверяем числитель на корректность
     std::string error = checkNumber(romanNumerator);
-    if (error.size())
+    if (!error.empty())
     {
-      throw "Числитель содержит ошибку в записи. " + error;
+      throw std::runtime_error("Числитель содержит ошибку в записи. " + error);
     }
 
     // Проверяем знаменатель на корректность
     error = checkNumber(romanDenominator);
-    if (error.size())
+    if (!error.empty())
     {
-      throw "Знаменатель содержит ошибку в записи. " + error;
+      throw std::runtime_error("Знаменатель содержит ошибку в записи. " + error);
     }
 
     // Сокращаем дробь
@@ -47,6 +48,10 @@ int main (int argc, char* argv[])
   }
 
   catch (const std::exception& ex)
+  {
+    std::cout << ex.what() << std::endl;
+  }
+  catch (const std::runtime_error& ex)
   {
     std::cout << ex.what() << std::endl;
   }
@@ -162,7 +167,7 @@ std::string checkNumber(const std::string& roman)
       return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
     }
 
-    if (roman != intToRoman(decimalNumber))
+    if (romanNumber != intToRoman(decimalNumber))
     {
       return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
     }

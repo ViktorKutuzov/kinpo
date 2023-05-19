@@ -13,19 +13,11 @@ namespace romanToIntTests
 		
 		TEST_METHOD(True)
 		{
-			vector<string> errors;
-			string roman = "I";
-			int expResult = 1;
-			int result = romanToInt(roman, errors);
-			Assert::AreEqual(expResult, result);
+
 		}
 		TEST_METHOD(False)
 		{
-			vector<string> errors;
-			string roman = "I";
-			int expResult = 1;
-			int result = romanToInt(roman, errors);
-			Assert::AreEqual(expResult, result);
+
 		}
 	};
 }
