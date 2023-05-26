@@ -7,7 +7,7 @@ int main (int argc, char* argv[])
   {
     //if (argv[1] == NULL || argv[2] == NULL) 
     //{
-    //    throw std::exception("Не указаны расположения файлов с входными и выходными данными.");
+    //    throw std::runtime_error("Не указаны расположения файлов с входными и выходными данными.");
     //}
 
     std::string roman = {};
@@ -47,10 +47,6 @@ int main (int argc, char* argv[])
     return 0;
   }
 
-  catch (const std::exception& ex)
-  {
-    std::cout << ex.what() << std::endl;
-  }
   catch (const std::runtime_error& ex)
   {
     std::cout << ex.what() << std::endl;
@@ -92,19 +88,19 @@ std::string intToRoman(const int& number)
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
 {
   if (!romanString.size())
-    throw std::exception("Отсутствуют входные данные.");
+    throw std::runtime_error("Отсутствуют входные данные.");
 
   size_t slashIndex = romanString.find('/');
   if (slashIndex == std::string::npos)
-    throw std::exception("Отсутствует символ разделителя. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
+    throw std::runtime_error("Отсутствует символ разделителя. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
 
   romanNumerator = romanString.substr(0, slashIndex);
   if (!romanNumerator.size())
-    throw std::exception("Отсутствует числитель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");\
+    throw std::runtime_error("Отсутствует числитель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");\
 
   romanDenominator = romanString.substr(slashIndex + 1);
   if (!romanDenominator.size())
-    throw std::exception("Отсутствует знаменатель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
+    throw std::runtime_error("Отсутствует знаменатель дроби. Введите числитель, символ разделителя \"/\", знаменатель, не разделяя их пробелами.");
 
   return;
 }
@@ -115,7 +111,7 @@ void readFile(const std::string path, std::string& data)
   input.open(path);
   if (!input.is_open())
   {
-    throw std::exception("Неверно указан файл с входными данными. Возможно, файл не существует.");
+    throw std::runtime_error("Неверно указан файл с входными данными. Возможно, файл не существует.");
   }
   else
   {
@@ -131,7 +127,7 @@ void writeToFile(const std::string path, std::string& data)
 
   if (!output.is_open())
   {
-    throw std::exception("Неверно указан файл для выходных данных. возможно указанного расположения не существует или нет прав на запись.");
+    throw std::runtime_error("Неверно указан файл для выходных данных. возможно указанного расположения не существует или нет прав на запись.");
   }
   else
   {
@@ -152,7 +148,7 @@ std::string checkNumber(const std::string& roman)
   {
     if (!dictionary[roman[i]])
     {
-      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан");
+      return ("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
     }
   }
 

@@ -11,7 +11,7 @@ namespace splitFractionTests
 	{
 	public:
 		
-		TEST_METHOD(noNumerator)
+		TEST_METHOD(noNumerator) //ќтсутствует числитель дроби
 		{
 			try
 			{
@@ -20,7 +20,7 @@ namespace splitFractionTests
 					romanDenominator = {};
 				splitFraction(roman, romanNumerator, romanDenominator);
 			}
-			catch (const std::exception& ex)
+			catch (std::runtime_error& ex)
 			{
 				string result = ex.what(),
 					expResult = "ќтсутствует числитель дроби. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.";
@@ -28,7 +28,7 @@ namespace splitFractionTests
 			}
 		}
 
-		TEST_METHOD(noDenominator)
+		TEST_METHOD(noDenominator) //ќтсутствует знаменатель дроби
 		{
 			try
 			{
@@ -37,7 +37,7 @@ namespace splitFractionTests
 					romanDenominator = {};
 				splitFraction(roman, romanNumerator, romanDenominator);
 			}
-			catch (const std::exception& ex)
+			catch (std::runtime_error& ex)
 			{
 				string result = ex.what(),
 					expResult = "ќтсутствует знаменатель дроби. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.";
@@ -45,7 +45,7 @@ namespace splitFractionTests
 			}
 		}
 
-		TEST_METHOD(noDelimiter)
+		TEST_METHOD(noDelimiter) //ќтсутствует символ разделител€
 		{
 			try
 			{
@@ -54,7 +54,7 @@ namespace splitFractionTests
 					romanDenominator = {};
 				splitFraction(roman, romanNumerator, romanDenominator);
 			}
-			catch (const std::exception& ex)
+			catch (std::runtime_error& ex)
 			{
 				string result = ex.what(),
 					expResult = "ќтсутствует символ разделител€. ¬ведите числитель, символ разделител€ \"/\", знаменатель, не раздел€€ их пробелами.";
@@ -62,7 +62,7 @@ namespace splitFractionTests
 			}
 		}
 
-		TEST_METHOD(noInputData)
+		TEST_METHOD(noInputData) //ќтсутствуют входные данные.
 		{
 			try
 			{
@@ -71,7 +71,7 @@ namespace splitFractionTests
 					romanDenominator = {};
 				splitFraction(roman, romanNumerator, romanDenominator);
 			}
-			catch (const std::exception& ex)
+			catch (std::runtime_error& ex)
 			{
 				string result = ex.what(),
 					expResult = "ќтсутствуют входные данные.";
@@ -79,7 +79,7 @@ namespace splitFractionTests
 			}
 		}
 
-		TEST_METHOD(NoErrorsFraction)
+		TEST_METHOD(NoErrorsFraction) //ѕравильна€ запись дроби
 		{
 			string roman = "X/II",
 				romanNumerator = {},

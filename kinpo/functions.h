@@ -45,11 +45,10 @@ void writeToFile(const std::string path, std::string& data);
 
 /*!
 Главная функция. Проводит сокращение дроби
-\param[in] roman - дробь в римской системе счисления
+\param[in] romanNumerator - числитель дроби
+\param[in] romanDenominator - знаменатиель дроби
 \return сокращенная дробь
-\throw - (Выбрасывает исключения в ошибочных входных данных)
 */
-
 std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
