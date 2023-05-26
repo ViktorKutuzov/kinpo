@@ -7,7 +7,7 @@ int main (int argc, char* argv[])
   {
     //if (argv[1] == NULL || argv[2] == NULL) 
     //{
-    //    throw std::runtime_error("Не указаны расположения файлов с входными и выходными данными.");
+    //    throw std::runtime_error("Недостаточно параметров для запуска программы.");
     //}
 
     std::string roman = {};
@@ -15,7 +15,14 @@ int main (int argc, char* argv[])
     std::string outpath = "output.txt";
 
     // Считываем данные из входного файла
-    readFile(inpath, roman);
+    std::ifstream input;
+    //input.open(argv[1]);
+    input.open(inpath);
+    if (!input.is_open())
+      throw std::runtime_error("Неверно указан файл с входными данными. Возможно, файл не существует.");
+    else
+      input >> roman;
+    input.close();
 
     // Переменные для числителя и знаменателя
     std::string romanNumerator = {};
@@ -39,12 +46,17 @@ int main (int argc, char* argv[])
     }
 
     // Сокращаем дробь
-    std::string result = reduceFraction(romanNumerator, romanDenominator);
+    roman = reduceFraction(romanNumerator, romanDenominator);
 
     // Записываем данные в выходной файл
-    writeToFile(outpath, result);
-
-    return 0;
+    std::ofstream output;
+    //input.open(argv[2]);
+    output.open(outpath);
+    if (!output.is_open())
+      throw std::runtime_error("Неверно указан файл для выходных данных. возможно указанного расположения не существует или нет прав на запись.");
+    else
+      output << roman;
+    output.close();
   }
 
   catch (const std::runtime_error& ex)
