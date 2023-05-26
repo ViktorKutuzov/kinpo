@@ -10,7 +10,7 @@ namespace checkNumberTests
 	TEST_CLASS(checkNumberTests)
 	{
 	public:
-		
+
 
 		TEST_METHOD(tooLongNumber) //Слишком большая длина
 		{

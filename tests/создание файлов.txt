@@ -1,0 +1,10 @@
+$numberOfFiles = 10  # Количество файлов, которые вы хотите создать
+$baseName = "output"  # Базовое имя файла
+
+for ($i = 5; $i -le $numberOfFiles; $i++) {
+    $fileName = $baseName + $i + ".txt"
+    $filePath = Join-Path -Path $PWD -ChildPath $fileName
+    New-Item -ItemType File -Path $filePath -Force
+}
+
+Write-Host "Файлы созданы успешно."
