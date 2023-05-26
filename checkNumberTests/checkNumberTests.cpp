@@ -7,33 +7,16 @@ using namespace std;
 
 namespace checkNumberTests
 {
-	TEST_CLASS(findErrorTests)
+	TEST_CLASS(checkNumberTests)
 	{
 	public:
 		
-		TEST_METHOD(overRepI)
+
+		TEST_METHOD(tooLongNumber)
 		{
-
-		}
-
-		TEST_METHOD(nonRepChars)
-		{
-
-		}
-
-		TEST_METHOD(charsAfterV)
-		{
-
-		}
-
-		TEST_METHOD(nonRepI)
-		{
-
-		}
-
-		TEST_METHOD(prohibitedCombIL)
-		{
-
+				string result = checkNumber("MMMDCCCLXXXVIIII"),
+					expResult = "Длина числа не может быть больше 15 символов.";
+				Assert::AreEqual(expResult, result);
 		}
 
 	};
