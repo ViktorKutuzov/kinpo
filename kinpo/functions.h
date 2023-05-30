@@ -6,40 +6,31 @@
 #include <numeric>
 #include <vector>
 
-/*!
-\file
-\brief Заголовочный файл с описанием классов
 
-Данный файл содержит в себе определения основных
-классов, используемых в демонстрационной программе
+/*!
+*\file
+*\brief Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе.
+*\author Viktor Kutuzov
+*\mainpage [(title)]
 */
 
 /*!
-\file
-\brief Заголовочный файл с описанием функций
-
-Данный файл содержит в себе...
-*/
-
-
-/*!
-*\fn int romanToInt(const std::string& roman);
 *\brief Переводит число из римской системы счисления в десятичную
-*\param[in] roman - римское число
-*return десятичное число
+*\param[in] roman - число в римской системе счисления
+*\return Число в десятичной системе счисления
 */
 int romanToInt(const std::string& roman);
 
 /*!
 *\brief Переводит число из десятичной системы счисления в римскую
-*\param[in] number - десятичное число
-*\return римское число
+*\param[in] number - число в десятичной системе счисления
+*\return Число в римской системе счисления
 */
 std::string intToRoman(const int& number);
 
 /*!
-*Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель
-*\param[in] romanString дробь в римской системе счисления
+*\brief Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель
+*\param[in] romanString - дробь в римской системе счисления
 *\param[in, out] romanNumerator - числитель дроби
 *\param[in, out] romanDenominator - знаменатиель дроби
 *\throw Выбрасывает исключения в ошибочных входных данных
@@ -47,16 +38,16 @@ std::string intToRoman(const int& number);
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
-*Главная функция. Проводит сокращение дроби
+*\brief Главная функция. Проводит сокращение дроби, записанной в римской системе счисления
 *\param[in] romanNumerator - числитель дроби
 *\param[in] romanDenominator - знаменатиель дроби
-*\return сокращенная дробь
+*\return Сокращенная дробь в римской системе счисления
 */
 std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
-*Проверить число на ошибки
+*\brief Проверить число на ошибки
 *\param[in] roman - римское число
-*\return результат проверки числа
+*\return Результат проверки числа
 */
 std::string checkNumber(const std::string& roman);
