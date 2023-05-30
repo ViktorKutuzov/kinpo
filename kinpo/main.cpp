@@ -1,5 +1,32 @@
+/*!
+*\file
+*\brief Данный файл содержит главную управляющую функцию программы
+*\mainpage Документация для программы "FractionReducer"
+Программа предназначена для сокращения дроби, записанной в римской системе счисления.
+Для функционирования программы необходима операционная система Windows 10 или выше.
+Программа разработана на языке С++ с использованием библиотеки STL в IDE Microsoft Visual Studio 2022.
+Стандарт языка ISO C++17 (/std:c++17). Исходный код программы является кроссплатформенным.
+Программа должна получать два параметра командной строки: имя входного файла с записанной в римской системе счисления дробью.
+
+Пример команды запуска программы:
+*\code
+FractionReducer.exe C:\\Documents\input.txt C:\\Documents\output.txt
+*\endcode
+*\author Viktor Kutuzov
+*\date Май 2023 года
+*\version 1.0
+*/
+
 #include "functions.h"
 
+
+/*!
+*\brief Главная управляющая функция программы
+*\param[in] char* argv[0]- путь к программе
+*\param[in] char* argv[1] - путь к входному файлу с данными
+*\param[in] char* argv[2] - путь к выходному файлу для записи
+*\return 0, если программа завершилась корректно
+*/
 int main (int argc, char* argv[])
 {
   setlocale(LC_ALL, "Russian"); // Русская локализация консоли
@@ -10,7 +37,7 @@ int main (int argc, char* argv[])
         throw std::runtime_error("Недостаточно параметров для запуска программы.");
     }
 
-    std::string roman = {}; ///Переменная для римской дроби
+    std::string roman {}; //Переменная для римской дроби
 
     // Считываем данные из входного файла
     std::ifstream input;
@@ -22,8 +49,8 @@ int main (int argc, char* argv[])
     input.close();
 
     // Переменные для числителя и знаменателя
-    std::string romanNumerator = {};
-    std::string romanDenominator = {};
+    std::string romanNumerator {};
+    std::string romanDenominator {};
 
     // Разделяем дробь на числитель и знаменатель
     splitFraction(roman, romanNumerator, romanDenominator);
@@ -58,9 +85,5 @@ int main (int argc, char* argv[])
   catch (const std::runtime_error& ex)
   {
     std::cout << ex.what() << std::endl;
-  }
-  catch (...)
-  {
-
   }
 }

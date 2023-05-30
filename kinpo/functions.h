@@ -6,18 +6,21 @@
 #include <numeric>
 #include <vector>
 
-
 /*!
 *\file
 *\brief Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе.
-*\author Viktor Kutuzov
-*\mainpage [(title)]
 */
 
 /*!
 *\brief Переводит число из римской системы счисления в десятичную
 *\param[in] roman - число в римской системе счисления
 *\return Число в десятичной системе счисления
+*/
+/*!
+Пример использования функции
+*\code
+int decimalDigit = romanToInt("XXX"); //decimalDigit = 30
+*\endcode
 */
 int romanToInt(const std::string& roman);
 
@@ -26,6 +29,12 @@ int romanToInt(const std::string& roman);
 *\param[in] number - число в десятичной системе счисления
 *\return Число в римской системе счисления
 */
+/*!
+Пример использования функции
+*\code
+std::string romanDigit = intToRoman(14); //romanDigit = XIV
+*\endcode
+*/
 std::string intToRoman(const int& number);
 
 /*!
@@ -33,7 +42,13 @@ std::string intToRoman(const int& number);
 *\param[in] romanString - дробь в римской системе счисления
 *\param[in, out] romanNumerator - числитель дроби
 *\param[in, out] romanDenominator - знаменатиель дроби
-*\throw Выбрасывает исключения в ошибочных входных данных
+*\throw std::runtime_error с указанием ошибки   
+*/
+/*!
+Пример использования функции
+*\code
+splitFraction("X/I", romanNumerator, romanDenominator); //romanNumerator = X, romanDenominator = I
+*\endcode
 */
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator);
 
@@ -43,11 +58,23 @@ void splitFraction(std::string romanString, std::string& romanNumerator, std::st
 *\param[in] romanDenominator - знаменатиель дроби
 *\return Сокращенная дробь в римской системе счисления
 */
+/*!
+Пример использования функции
+*\code
+std::string roman = reduceFraction("XXX", "V"); //roman = VI
+*\endcode
+*/
 std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator);
 
 /*!
 *\brief Проверить число на ошибки
 *\param[in] roman - римское число
 *\return Результат проверки числа
+*/
+/*!
+Пример использования функции
+*\code
+std::string error = checkNumber("IX"); //error = "", т.к. число правильное
+*\endcode
 */
 std::string checkNumber(const std::string& roman);
