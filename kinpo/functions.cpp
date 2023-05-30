@@ -1,3 +1,9 @@
+/*!
+*\file
+*\brief Данный  файл содержит в себе реализацию основных функций, которые используются в программе.
+*\author Viktor Kutuzov
+*/
+
 #include "functions.h"
 
 int romanToInt(const std::string& roman)
