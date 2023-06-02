@@ -1,0 +1,15 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Главная управляющая функция программы" alt="" coords="5,56,55,83"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152" title="Проверить число на ошибки" alt="" coords="106,56,207,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,67,91,67,91,72,55,72"/>
+<area shape="rect" id="Node000005" href="$functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,5,210,32"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="54,57,107,36,109,41,56,62"/>
+<area shape="rect" id="Node000006" href="$functions_8cpp.html#a983a101bb3650670e6fb359901b7727c" title="Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель" alt="" coords="110,107,203,133"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="56,77,109,98,107,103,54,82"/>
+<area shape="rect" id="Node000003" href="$functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="258,5,348,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,53,248,35,249,40,198,58"/>
+<area shape="rect" id="Node000004" href="$functions_8cpp.html#a335f968776e854b30be626db2289d6af" title="Переводит число из римской системы счисления в десятичную" alt="" coords="261,56,346,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="207,67,246,67,246,72,207,72"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="211,16,243,16,243,21,211,21"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="198,30,249,48,248,53,197,35"/>
+</map>

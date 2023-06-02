@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.7"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FractionReducer: Файл functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">FractionReducer<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Сокращение римской дроби</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.7 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл functions.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;numeric&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для functions.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h__incl.png" border="0" usemap="#afunctions_8h" alt=""/></div>
+<map name="afunctions_8h" id="afunctions_8h">
+<area shape="rect" title="Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе." alt="" coords="199,5,283,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,77,107"/>
+<area shape="poly" title=" " alt="" coords="207,35,91,77,89,72,205,30"/>
+<area shape="rect" title=" " alt="" coords="101,80,154,107"/>
+<area shape="poly" title=" " alt="" coords="223,35,161,74,158,69,220,30"/>
+<area shape="rect" title=" " alt="" coords="178,80,224,107"/>
+<area shape="poly" title=" " alt="" coords="236,34,217,68,213,66,232,31"/>
+<area shape="rect" title=" " alt="" coords="249,80,313,107"/>
+<area shape="poly" title=" " alt="" coords="250,31,269,66,265,68,246,34"/>
+<area shape="rect" title=" " alt="" coords="337,80,404,107"/>
+<area shape="poly" title=" " alt="" coords="265,30,336,70,334,75,262,35"/>
+<area shape="rect" title=" " alt="" coords="428,80,483,107"/>
+<area shape="poly" title=" " alt="" coords="279,30,415,76,413,81,278,35"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Граф файлов, в которые включается этот файл:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h__dep__incl.png" border="0" usemap="#afunctions_8hdep" alt=""/></div>
+<map name="afunctions_8hdep" id="afunctions_8hdep">
+<area shape="rect" title="Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе." alt="" coords="67,5,151,32"/>
+<area shape="rect" href="functions_8cpp.html" title="Данный файл содержит в себе реализацию основных функций, которые используются в программе." alt="" coords="5,80,104,107"/>
+<area shape="poly" title=" " alt="" coords="93,46,66,81,62,78,89,42"/>
+<area shape="rect" href="main_8cpp.html" title="Данный файл содержит главную управляющую функцию программы" alt="" coords="128,80,202,107"/>
+<area shape="poly" title=" " alt="" coords="130,42,158,78,153,81,126,46"/>
+</map>
+</div>
+</div>
+<p><a href="functions_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a335f968776e854b30be626db2289d6af"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a335f968776e854b30be626db2289d6af">romanToInt</a> (const std::string &amp;roman)</td></tr>
+<tr class="memdesc:a335f968776e854b30be626db2289d6af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переводит число из римской системы счисления в десятичную  <br /></td></tr>
+<tr class="separator:a335f968776e854b30be626db2289d6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3820634aa58e598e923f9fef3353ff7e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a3820634aa58e598e923f9fef3353ff7e">intToRoman</a> (const int &amp;number)</td></tr>
+<tr class="memdesc:a3820634aa58e598e923f9fef3353ff7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переводит число из десятичной системы счисления в римскую  <br /></td></tr>
+<tr class="separator:a3820634aa58e598e923f9fef3353ff7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a983a101bb3650670e6fb359901b7727c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a983a101bb3650670e6fb359901b7727c">splitFraction</a> (std::string romanString, std::string &amp;romanNumerator, std::string &amp;romanDenominator)</td></tr>
+<tr class="memdesc:a983a101bb3650670e6fb359901b7727c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель  <br /></td></tr>
+<tr class="separator:a983a101bb3650670e6fb359901b7727c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42c4914ba578ffd5d4d28c01568c50c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#af42c4914ba578ffd5d4d28c01568c50c">reduceFraction</a> (std::string &amp;romanNumerator, std::string &amp;romanDenominator)</td></tr>
+<tr class="memdesc:af42c4914ba578ffd5d4d28c01568c50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главная функция. Проводит сокращение дроби, записанной в римской системе счисления  <br /></td></tr>
+<tr class="separator:af42c4914ba578ffd5d4d28c01568c50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e5606536b1b3cf937e72700237fb152"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a5e5606536b1b3cf937e72700237fb152">checkNumber</a> (const std::string &amp;roman)</td></tr>
+<tr class="memdesc:a5e5606536b1b3cf937e72700237fb152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить число на ошибки  <br /></td></tr>
+<tr class="separator:a5e5606536b1b3cf937e72700237fb152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе. </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a5e5606536b1b3cf937e72700237fb152" name="a5e5606536b1b3cf937e72700237fb152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e5606536b1b3cf937e72700237fb152">&#9670;&#160;</a></span>checkNumber()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string checkNumber </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>roman</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверить число на ошибки </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roman</td><td>- римское число </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Результат проверки числа</dd></dl>
+<p>Пример использования функции </p><div class="fragment"><div class="line">std::string error = <a class="code hl_function" href="functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152">checkNumber</a>(<span class="stringliteral">&quot;IX&quot;</span>); <span class="comment">//error = &quot;&quot;, т.к. число правильное</span></div>
+<div class="ttc" id="afunctions_8cpp_html_a5e5606536b1b3cf937e72700237fb152"><div class="ttname"><a href="functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152">checkNumber</a></div><div class="ttdeci">std::string checkNumber(const std::string &amp;roman)</div><div class="ttdoc">Проверить число на ошибки</div><div class="ttdef"><b>Definition</b> functions.cpp:56</div></div>
+</div><!-- fragment --> <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a5e5606536b1b3cf937e72700237fb152_cgraph.png" border="0" usemap="#afunctions_8h_a5e5606536b1b3cf937e72700237fb152_cgraph" alt=""/></div>
+<map name="afunctions_8h_a5e5606536b1b3cf937e72700237fb152_cgraph" id="afunctions_8h_a5e5606536b1b3cf937e72700237fb152_cgraph">
+<area shape="rect" title="Проверить число на ошибки" alt="" coords="5,31,107,57"/>
+<area shape="rect" href="functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="155,5,245,32"/>
+<area shape="poly" title=" " alt="" coords="107,32,140,27,141,32,108,38"/>
+<area shape="rect" href="functions_8cpp.html#a335f968776e854b30be626db2289d6af" title="Переводит число из римской системы счисления в десятичную" alt="" coords="157,56,243,83"/>
+<area shape="poly" title=" " alt="" coords="108,50,143,57,142,62,107,56"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a5e5606536b1b3cf937e72700237fb152_icgraph.png" border="0" usemap="#afunctions_8h_a5e5606536b1b3cf937e72700237fb152_icgraph" alt=""/></div>
+<map name="afunctions_8h_a5e5606536b1b3cf937e72700237fb152_icgraph" id="afunctions_8h_a5e5606536b1b3cf937e72700237fb152_icgraph">
+<area shape="rect" title="Проверить число на ошибки" alt="" coords="103,5,204,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="88,21,55,21,55,16,88,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3820634aa58e598e923f9fef3353ff7e" name="a3820634aa58e598e923f9fef3353ff7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3820634aa58e598e923f9fef3353ff7e">&#9670;&#160;</a></span>intToRoman()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string intToRoman </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>number</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Переводит число из десятичной системы счисления в римскую </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>- число в десятичной системе счисления </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Число в римской системе счисления</dd></dl>
+<p>Пример использования функции </p><div class="fragment"><div class="line">std::string romanDigit = <a class="code hl_function" href="functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e">intToRoman</a>(14); <span class="comment">//romanDigit = XIV</span></div>
+<div class="ttc" id="afunctions_8cpp_html_a3820634aa58e598e923f9fef3353ff7e"><div class="ttname"><a href="functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e">intToRoman</a></div><div class="ttdeci">std::string intToRoman(const int &amp;number)</div><div class="ttdoc">Переводит число из десятичной системы счисления в римскую</div><div class="ttdef"><b>Definition</b> functions.cpp:25</div></div>
+</div><!-- fragment --> <div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a3820634aa58e598e923f9fef3353ff7e_icgraph.png" border="0" usemap="#afunctions_8h_a3820634aa58e598e923f9fef3353ff7e_icgraph" alt=""/></div>
+<map name="afunctions_8h_a3820634aa58e598e923f9fef3353ff7e_icgraph" id="afunctions_8h_a3820634aa58e598e923f9fef3353ff7e_icgraph">
+<area shape="rect" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="258,31,348,57"/>
+<area shape="rect" href="functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152" title="Проверить число на ошибки" alt="" coords="106,5,207,32"/>
+<area shape="poly" title=" " alt="" coords="243,36,207,30,208,25,244,31"/>
+<area shape="rect" href="functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,56,210,83"/>
+<area shape="poly" title=" " alt="" coords="243,57,211,63,210,57,243,52"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="91,34,56,42,55,36,90,29"/>
+<area shape="poly" title=" " alt="" coords="88,58,54,51,55,46,89,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af42c4914ba578ffd5d4d28c01568c50c" name="af42c4914ba578ffd5d4d28c01568c50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42c4914ba578ffd5d4d28c01568c50c">&#9670;&#160;</a></span>reduceFraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string reduceFraction </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>romanNumerator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>romanDenominator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Главная функция. Проводит сокращение дроби, записанной в римской системе счисления </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">romanNumerator</td><td>- числитель дроби </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">romanDenominator</td><td>- знаменатиель дроби </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Сокращенная дробь в римской системе счисления</dd></dl>
+<p>Пример использования функции </p><div class="fragment"><div class="line">std::string roman = <a class="code hl_function" href="functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c">reduceFraction</a>(<span class="stringliteral">&quot;XXX&quot;</span>, <span class="stringliteral">&quot;V&quot;</span>); <span class="comment">//roman = VI</span></div>
+<div class="ttc" id="afunctions_8cpp_html_af42c4914ba578ffd5d4d28c01568c50c"><div class="ttname"><a href="functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c">reduceFraction</a></div><div class="ttdeci">std::string reduceFraction(std::string &amp;romanNumerator, std::string &amp;romanDenominator)</div><div class="ttdoc">Главная функция. Проводит сокращение дроби, записанной в римской системе счисления</div><div class="ttdef"><b>Definition</b> functions.cpp:91</div></div>
+</div><!-- fragment --> <div class="dynheader">
+Граф вызовов:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af42c4914ba578ffd5d4d28c01568c50c_cgraph.png" border="0" usemap="#afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_cgraph" alt=""/></div>
+<map name="afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_cgraph" id="afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_cgraph">
+<area shape="rect" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="5,31,113,57"/>
+<area shape="rect" href="functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="161,5,251,32"/>
+<area shape="poly" title=" " alt="" coords="113,32,145,26,146,32,114,37"/>
+<area shape="rect" href="functions_8cpp.html#a335f968776e854b30be626db2289d6af" title="Переводит число из римской системы счисления в десятичную" alt="" coords="163,56,249,83"/>
+<area shape="poly" title=" " alt="" coords="114,51,149,57,148,62,113,56"/>
+</map>
+</div>
+<div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af42c4914ba578ffd5d4d28c01568c50c_icgraph.png" border="0" usemap="#afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_icgraph" alt=""/></div>
+<map name="afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_icgraph" id="afunctions_8h_af42c4914ba578ffd5d4d28c01568c50c_icgraph">
+<area shape="rect" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,5,210,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="88,21,55,21,55,16,88,16"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a335f968776e854b30be626db2289d6af" name="a335f968776e854b30be626db2289d6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335f968776e854b30be626db2289d6af">&#9670;&#160;</a></span>romanToInt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int romanToInt </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>roman</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Переводит число из римской системы счисления в десятичную </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">roman</td><td>- число в римской системе счисления </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Число в десятичной системе счисления</dd></dl>
+<p>Пример использования функции </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> decimalDigit = <a class="code hl_function" href="functions_8cpp.html#a335f968776e854b30be626db2289d6af">romanToInt</a>(<span class="stringliteral">&quot;XXX&quot;</span>); <span class="comment">//decimalDigit = 30</span></div>
+<div class="ttc" id="afunctions_8cpp_html_a335f968776e854b30be626db2289d6af"><div class="ttname"><a href="functions_8cpp.html#a335f968776e854b30be626db2289d6af">romanToInt</a></div><div class="ttdeci">int romanToInt(const std::string &amp;roman)</div><div class="ttdoc">Переводит число из римской системы счисления в десятичную</div><div class="ttdef"><b>Definition</b> functions.cpp:8</div></div>
+</div><!-- fragment --> <div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a335f968776e854b30be626db2289d6af_icgraph.png" border="0" usemap="#afunctions_8h_a335f968776e854b30be626db2289d6af_icgraph" alt=""/></div>
+<map name="afunctions_8h_a335f968776e854b30be626db2289d6af_icgraph" id="afunctions_8h_a335f968776e854b30be626db2289d6af_icgraph">
+<area shape="rect" title="Переводит число из римской системы счисления в десятичную" alt="" coords="258,31,343,57"/>
+<area shape="rect" href="functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152" title="Проверить число на ошибки" alt="" coords="106,5,207,32"/>
+<area shape="poly" title=" " alt="" coords="243,37,207,30,208,25,244,31"/>
+<area shape="rect" href="functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,56,210,83"/>
+<area shape="poly" title=" " alt="" coords="244,57,211,63,210,57,243,51"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,31,55,57"/>
+<area shape="poly" title=" " alt="" coords="91,34,56,42,55,36,90,29"/>
+<area shape="poly" title=" " alt="" coords="88,58,54,51,55,46,89,53"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a983a101bb3650670e6fb359901b7727c" name="a983a101bb3650670e6fb359901b7727c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a983a101bb3650670e6fb359901b7727c">&#9670;&#160;</a></span>splitFraction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitFraction </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>romanString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>romanNumerator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>romanDenominator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">romanString</td><td>- дробь в римской системе счисления </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">romanNumerator</td><td>- числитель дроби </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">romanDenominator</td><td>- знаменатиель дроби </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>с указанием ошибки <br  />
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Пример использования функции </p><div class="fragment"><div class="line"><a class="code hl_function" href="functions_8cpp.html#a983a101bb3650670e6fb359901b7727c">splitFraction</a>(<span class="stringliteral">&quot;X/I&quot;</span>, romanNumerator, romanDenominator); <span class="comment">//romanNumerator = X, romanDenominator = I</span></div>
+<div class="ttc" id="afunctions_8cpp_html_a983a101bb3650670e6fb359901b7727c"><div class="ttname"><a href="functions_8cpp.html#a983a101bb3650670e6fb359901b7727c">splitFraction</a></div><div class="ttdeci">void splitFraction(std::string romanString, std::string &amp;romanNumerator, std::string &amp;romanDenominator)</div><div class="ttdoc">Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель</div><div class="ttdef"><b>Definition</b> functions.cpp:36</div></div>
+</div><!-- fragment --> <div class="dynheader">
+Граф вызова функции:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a983a101bb3650670e6fb359901b7727c_icgraph.png" border="0" usemap="#afunctions_8h_a983a101bb3650670e6fb359901b7727c_icgraph" alt=""/></div>
+<map name="afunctions_8h_a983a101bb3650670e6fb359901b7727c_icgraph" id="afunctions_8h_a983a101bb3650670e6fb359901b7727c_icgraph">
+<area shape="rect" title="Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель" alt="" coords="103,5,195,32"/>
+<area shape="rect" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="88,21,55,21,55,16,88,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
+</small></address>
+</body>
+</html>
