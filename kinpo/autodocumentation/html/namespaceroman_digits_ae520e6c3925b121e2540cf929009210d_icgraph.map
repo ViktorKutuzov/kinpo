@@ -1,0 +1,10 @@
+<map id="romanDigits::intToRoman" name="romanDigits::intToRoman">
+<area shape="rect" id="Node000001" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="335,31,502,57"/>
+<area shape="rect" id="Node000002" href="$namespaceroman_digits.html#af05f13e677b66733b565e134bf2a2ff2" title="Проверить число на ошибки" alt="" coords="106,5,284,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="320,36,284,31,285,26,320,30"/>
+<area shape="rect" id="Node000004" href="$namespaceroman_digits.html#a66c827c31fecfb88eea39072da5f80f9" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,56,287,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="320,58,288,62,287,56,320,53"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,37,55,43,54,38,91,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="90,56,55,50,55,45,90,51"/>
+</map>

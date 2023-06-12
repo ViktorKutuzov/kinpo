@@ -1,0 +1,7 @@
+<map id="romanDigits::checkNumber" name="romanDigits::checkNumber">
+<area shape="rect" id="Node000001" title="Проверить число на ошибки" alt="" coords="5,31,184,57"/>
+<area shape="rect" id="Node000002" href="$namespaceroman_digits.html#ae520e6c3925b121e2540cf929009210d" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="232,5,399,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,31,217,27,217,33,184,36"/>
+<area shape="rect" id="Node000003" href="$namespaceroman_digits.html#a604e4cad46fb55198ae9a9345850c13f" title="Переводит число из римской системы счисления в десятичную" alt="" coords="234,56,397,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,52,220,56,219,61,184,57"/>
+</map>
