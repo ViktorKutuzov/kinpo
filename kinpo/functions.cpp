@@ -71,16 +71,9 @@ std::string checkNumber(const std::string& roman)
   if (roman.size() > 15) //Проверить корректность длины
     return "Длина числа не может быть больше 15 символов.";
 
-  std::unordered_map <char, uint16_t> dictionary =
-  { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} }; //Словарь римских цифр
-
   for (size_t i{}; i < roman.size(); ++i) //Проверить каждый символ на его присутствие в словаре
-  {
-    if (!dictionary[roman[i]])
-    {
+    if (dictionary.find(roman[i]) == dictionary.end())
       return ("Cимвол номер " + std::to_string(i + 1) + " неопознан.");
-    }
-  }
 
   std::string romanNumber = ""; //Переменная проверки числа
   for (size_t i = 0; i < roman.size(); ++i) //Для каждого символа римского числа;
