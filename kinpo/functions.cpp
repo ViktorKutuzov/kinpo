@@ -31,7 +31,7 @@ uint16_t romanToInt(const std::string& roman)
 
 std::string intToRoman(uint16_t number)
 {
-  std::string digits[10] { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, // Римские цифры для единиц
+  const std::string digits[10] { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, // Римские цифры для единиц
     tens[10] { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }, // Римские цифры для десятков
     hundreds[10] { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" }, // Римские цифры сотен
     thousands[4] { "", "M", "MM", "MMM" }; // Римские цифры для тысяч
