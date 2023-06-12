@@ -14,7 +14,7 @@ FractionReducer.exe C:\\Documents\input.txt C:\\Documents\output.txt
 *\endcode
 *\author Viktor Kutuzov
 *\date Май 2023 года
-*\version 1.0
+*\version 1.1
 */
 
 #include "functions.h"

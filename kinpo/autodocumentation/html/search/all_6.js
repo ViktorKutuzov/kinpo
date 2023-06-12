@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['документация_20для_20программы_20_22fractionreducer_22_0',['Документация для программы &quot;FractionReducer&quot;',['../index.html',1,'']]]
+  ['splitfraction_0',['splitFraction',['../functions_8cpp.html#a983a101bb3650670e6fb359901b7727c',1,'splitFraction(std::string romanString, std::string &amp;romanNumerator, std::string &amp;romanDenominator):&#160;functions.cpp'],['../functions_8h.html#a983a101bb3650670e6fb359901b7727c',1,'splitFraction(std::string romanString, std::string &amp;romanNumerator, std::string &amp;romanDenominator):&#160;functions.cpp']]]
 ];

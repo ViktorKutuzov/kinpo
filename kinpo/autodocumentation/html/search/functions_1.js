@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inttoroman_0',['intToRoman',['../functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e',1,'intToRoman(const int &amp;number):&#160;functions.cpp'],['../functions_8h.html#a3820634aa58e598e923f9fef3353ff7e',1,'intToRoman(const int &amp;number):&#160;functions.cpp']]]
+  ['inttoroman_0',['intToRoman',['../functions_8cpp.html#a11df20297fea2f3ef0bac45d963b88ac',1,'intToRoman(uint16_t number):&#160;functions.cpp'],['../functions_8h.html#a11df20297fea2f3ef0bac45d963b88ac',1,'intToRoman(uint16_t number):&#160;functions.cpp']]]
 ];

@@ -1,7 +1,7 @@
 <map id="checkNumber" name="checkNumber">
 <area shape="rect" id="Node000001" title="Проверить число на ошибки" alt="" coords="5,31,107,57"/>
-<area shape="rect" id="Node000002" href="$functions_8cpp.html#a3820634aa58e598e923f9fef3353ff7e" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="155,5,245,32"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#a11df20297fea2f3ef0bac45d963b88ac" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="155,5,245,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,32,140,27,141,32,108,38"/>
-<area shape="rect" id="Node000003" href="$functions_8cpp.html#a335f968776e854b30be626db2289d6af" title="Переводит число из римской системы счисления в десятичную" alt="" coords="157,56,243,83"/>
+<area shape="rect" id="Node000003" href="$functions_8cpp.html#abe0ef095ecb61a086e090e639ca12b4f" title="Переводит число из римской системы счисления в десятичную" alt="" coords="157,56,243,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,50,143,57,142,62,107,56"/>
 </map>

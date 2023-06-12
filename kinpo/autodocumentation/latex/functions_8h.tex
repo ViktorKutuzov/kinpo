@@ -8,6 +8,7 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
@@ -28,9 +29,9 @@
 \doxysubsubsection*{Функции}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{functions_8h_a335f968776e854b30be626db2289d6af}{roman\+To\+Int}} (const std\+::string \&roman)
+uint16\+\_\+t \mbox{\hyperlink{functions_8h_abe0ef095ecb61a086e090e639ca12b4f}{roman\+To\+Int}} (const std\+::string \&roman)
 \begin{DoxyCompactList}\small\item\em Переводит число из римской системы счисления в десятичную \end{DoxyCompactList}\item 
-std\+::string \mbox{\hyperlink{functions_8h_a3820634aa58e598e923f9fef3353ff7e}{int\+To\+Roman}} (const int \&number)
+std\+::string \mbox{\hyperlink{functions_8h_a11df20297fea2f3ef0bac45d963b88ac}{int\+To\+Roman}} (uint16\+\_\+t number)
 \begin{DoxyCompactList}\small\item\em Переводит число из десятичной системы счисления в римскую \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{functions_8h_a983a101bb3650670e6fb359901b7727c}{split\+Fraction}} (std\+::string roman\+String, std\+::string \&roman\+Numerator, std\+::string \&roman\+Denominator)
 \begin{DoxyCompactList}\small\item\em Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель \end{DoxyCompactList}\item 
@@ -83,11 +84,11 @@ std\+::string \mbox{\hyperlink{functions_8h_a5e5606536b1b3cf937e72700237fb152}{c
 \includegraphics[width=229pt]{functions_8h_a5e5606536b1b3cf937e72700237fb152_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{functions_8h_a3820634aa58e598e923f9fef3353ff7e}\label{functions_8h_a3820634aa58e598e923f9fef3353ff7e} 
+\Hypertarget{functions_8h_a11df20297fea2f3ef0bac45d963b88ac}\label{functions_8h_a11df20297fea2f3ef0bac45d963b88ac} 
 \index{functions.h@{functions.h}!intToRoman@{intToRoman}}
 \index{intToRoman@{intToRoman}!functions.h@{functions.h}}
 \doxysubsubsection{\texorpdfstring{intToRoman()}{intToRoman()}}
-{\footnotesize\ttfamily std\+::string int\+To\+Roman (\begin{DoxyParamCaption}\item[{const int \&}]{number }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string int\+To\+Roman (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{number }\end{DoxyParamCaption})}
 
 
 
@@ -103,14 +104,14 @@ std\+::string \mbox{\hyperlink{functions_8h_a5e5606536b1b3cf937e72700237fb152}{c
 \end{DoxyReturn}
 Пример использования функции 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{std::string\ romanDigit\ =\ \mbox{\hyperlink{functions_8cpp_a3820634aa58e598e923f9fef3353ff7e}{intToRoman}}(14);\ \textcolor{comment}{//romanDigit\ =\ XIV}}
+\DoxyCodeLine{std::string\ romanDigit\ =\ \mbox{\hyperlink{functions_8cpp_a11df20297fea2f3ef0bac45d963b88ac}{intToRoman}}(14);\ \textcolor{comment}{//romanDigit\ =\ XIV}}
 
 \end{DoxyCode}
  Граф вызова функции\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=337pt]{functions_8h_a3820634aa58e598e923f9fef3353ff7e_icgraph}
+\includegraphics[width=337pt]{functions_8h_a11df20297fea2f3ef0bac45d963b88ac_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{functions_8h_af42c4914ba578ffd5d4d28c01568c50c}\label{functions_8h_af42c4914ba578ffd5d4d28c01568c50c} 
@@ -152,11 +153,11 @@ std\+::string \mbox{\hyperlink{functions_8h_a5e5606536b1b3cf937e72700237fb152}{c
 \includegraphics[width=234pt]{functions_8h_af42c4914ba578ffd5d4d28c01568c50c_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{functions_8h_a335f968776e854b30be626db2289d6af}\label{functions_8h_a335f968776e854b30be626db2289d6af} 
+\Hypertarget{functions_8h_abe0ef095ecb61a086e090e639ca12b4f}\label{functions_8h_abe0ef095ecb61a086e090e639ca12b4f} 
 \index{functions.h@{functions.h}!romanToInt@{romanToInt}}
 \index{romanToInt@{romanToInt}!functions.h@{functions.h}}
 \doxysubsubsection{\texorpdfstring{romanToInt()}{romanToInt()}}
-{\footnotesize\ttfamily int roman\+To\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{roman }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint16\+\_\+t roman\+To\+Int (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{roman }\end{DoxyParamCaption})}
 
 
 
@@ -172,14 +173,14 @@ std\+::string \mbox{\hyperlink{functions_8h_a5e5606536b1b3cf937e72700237fb152}{c
 \end{DoxyReturn}
 Пример использования функции 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordtype}{int}\ decimalDigit\ =\ \mbox{\hyperlink{functions_8cpp_a335f968776e854b30be626db2289d6af}{romanToInt}}(\textcolor{stringliteral}{"{}XXX"{}});\ \textcolor{comment}{//decimalDigit\ =\ 30}}
+\DoxyCodeLine{uint16\_t\ decimalDigit\ =\ \mbox{\hyperlink{functions_8cpp_abe0ef095ecb61a086e090e639ca12b4f}{romanToInt}}(\textcolor{stringliteral}{"{}XXX"{}});\ \textcolor{comment}{//decimalDigit\ =\ 30}}
 
 \end{DoxyCode}
  Граф вызова функции\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=334pt]{functions_8h_a335f968776e854b30be626db2289d6af_icgraph}
+\includegraphics[width=334pt]{functions_8h_abe0ef095ecb61a086e090e639ca12b4f_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{functions_8h_a983a101bb3650670e6fb359901b7727c}\label{functions_8h_a983a101bb3650670e6fb359901b7727c} 

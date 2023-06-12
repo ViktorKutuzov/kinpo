@@ -1,0 +1,10 @@
+<map id="intToRoman" name="intToRoman">
+<area shape="rect" id="Node000001" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="258,31,348,57"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#a5e5606536b1b3cf937e72700237fb152" title="Проверить число на ошибки" alt="" coords="106,5,207,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,36,207,30,208,25,244,31"/>
+<area shape="rect" id="Node000004" href="$functions_8cpp.html#af42c4914ba578ffd5d4d28c01568c50c" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="103,56,210,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,57,211,63,210,57,243,52"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="Главная управляющая функция программы" alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,34,56,42,55,36,90,29"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="88,58,54,51,55,46,89,53"/>
+</map>

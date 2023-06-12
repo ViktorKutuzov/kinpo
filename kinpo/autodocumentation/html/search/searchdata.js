@@ -1,9 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "cfimrsд",
+  0: "cdfimrsд",
   1: "fm",
   2: "cimrs",
-  3: "д"
+  3: "d",
+  4: "д"
 };
 
 var indexSectionNames =
@@ -11,7 +12,8 @@ var indexSectionNames =
   0: "all",
   1: "files",
   2: "functions",
-  3: "pages"
+  3: "variables",
+  4: "pages"
 };
 
 var indexSectionLabels =
@@ -19,6 +21,7 @@ var indexSectionLabels =
   0: "Указатель",
   1: "Файлы",
   2: "Функции",
-  3: "Страницы"
+  3: "Переменные",
+  4: "Страницы"
 };
 
