@@ -5,20 +5,26 @@
 
 #include "functions.h"
 
+const std::unordered_map<char, uint16_t>& dictionary =
+{ {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} }; //Словарь римских цифр
+
 uint16_t romanToInt(const std::string& roman)
 {
   uint16_t ans{}; //Переменная для результата
-  std::map <char, int> dictionary =
-  { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} }; //Словарь римских цифр
 
-  for (size_t i{}; i < roman.size(); ++i) //Для каждого символа в строке roman
+  uint16_t prevValue = dictionary.at(roman[0]);
+  for (size_t i = 1; i < roman.size(); ++i) //Для каждого символа в строке roman
   {
-    if ((i + 1 < roman.size()) && (dictionary[roman[i]] < dictionary[roman[i + 1]])) //Значение текущего символа меньше значения следующего символа и текущий символ не является последним
-      ans -= dictionary[roman[i]]; //Вычесть значение текущего символа из ans
-    else
-      ans += dictionary[roman[i]]; //Иначе добавить значение текущего символа к ans
-  }
+    uint16_t currentValue = dictionary.at(roman[i]);
 
+    if (prevValue < currentValue) //Значение текущего символа меньше значения следующего символа
+      ans -= prevValue; //Вычесть значение текущего символа из ans
+    else
+      ans += prevValue; //Иначе добавить значение текущего символа к ans
+
+    prevValue = currentValue; //Сохранить текущее значение как предыдущее для следующей итерации
+  }
+  ans += prevValue;
   return ans;
 }
 
@@ -65,7 +71,7 @@ std::string checkNumber(const std::string& roman)
   if (roman.size() > 15) //Проверить корректность длины
     return "Длина числа не может быть больше 15 символов.";
 
-  std::map <char, int> dictionary =
+  std::unordered_map <char, uint16_t> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} }; //Словарь римских цифр
 
   for (size_t i{}; i < roman.size(); ++i) //Проверить каждый символ на его присутствие в словаре
