@@ -5,9 +5,9 @@
 
 #include "functions.h"
 
-int romanToInt(const std::string& roman)
+uint16_t romanToInt(const std::string& roman)
 {
-  int ans{}; //Переменная для результата
+  uint16_t ans{}; //Переменная для результата
   std::map <char, int> dictionary =
   { {'I', 1}, {'V' ,5}, {'X', 10}, {'L', 50}, {'C' ,100}, {'D', 500}, {'M', 1000} }; //Словарь римских цифр
 
@@ -22,15 +22,22 @@ int romanToInt(const std::string& roman)
   return ans;
 }
 
-std::string intToRoman(const int& number)
+std::string intToRoman(uint16_t number)
 {
-  std::vector<std::string> digits{ "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, // Римские цифры для единиц
-    tens{ "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }, // Римские цифры для десятков
-    hundreds{ "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" }, // Римские цифры сотен
-    thousands{ "", "M", "MM", "MMM" }; // Римские цифры для тысяч
+  std::string digits[10] { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }, // Римские цифры для единиц
+    tens[10] { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }, // Римские цифры для десятков
+    hundreds[10] { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" }, // Римские цифры сотен
+    thousands[4] { "", "M", "MM", "MMM" }; // Римские цифры для тысяч
 
-  return thousands[number / 1000] + hundreds[(number % 1000) / 100] //Вернуть конкатенацию всех римских цифр
-    + tens[(number % 100) / 10] + digits[number % 10];
+  std::string result;
+  result.reserve(15); // Предполагаемый максимальный размер итоговой строки
+
+  result += thousands[number / 1000];
+  result += hundreds[(number % 1000) / 100];
+  result += tens[(number % 100) / 10];
+  result += digits[number % 10];
+
+  return result; //Вернуть конкатенацию всех римских цифр
 }
 
 void splitFraction(std::string romanString, std::string& romanNumerator, std::string& romanDenominator)
@@ -74,7 +81,7 @@ std::string checkNumber(const std::string& roman)
   {
     romanNumber.push_back(roman[i]); //Добавить символ к переменной romanNumber;
 
-    int decimalNumber = romanToInt(romanNumber); //Перевести romanNumber в десятичное число;
+    uint16_t decimalNumber = romanToInt(romanNumber); //Перевести romanNumber в десятичное число;
     if (decimalNumber > 3999 || decimalNumber < 1) //Проверить корректность перевода
     {
       return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
@@ -91,11 +98,11 @@ std::string checkNumber(const std::string& roman)
 std::string reduceFraction(std::string& romanNumerator, std::string& romanDenominator)
 {
   // Переводим римские числа в десятичные
-  int numerator = romanToInt(romanNumerator);
-  int denominator = romanToInt(romanDenominator);
+  uint16_t numerator = romanToInt(romanNumerator);
+  uint16_t denominator = romanToInt(romanDenominator);
 
   // Находим НОД и сокращаем дробь
-  int divisor = std::gcd(numerator, denominator);
+  uint16_t divisor = std::gcd(numerator, denominator);
   numerator /= divisor;
   denominator /= divisor;
 

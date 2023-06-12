@@ -19,10 +19,10 @@
 /*!
 Пример использования функции
 *\code
-int decimalDigit = romanToInt("XXX"); //decimalDigit = 30
+uint16_t decimalDigit = romanToInt("XXX"); //decimalDigit = 30
 *\endcode
 */
-int romanToInt(const std::string& roman);
+uint16_t romanToInt(const std::string& roman);
 
 /*!
 *\brief Переводит число из десятичной системы счисления в римскую
@@ -35,7 +35,7 @@ int romanToInt(const std::string& roman);
 std::string romanDigit = intToRoman(14); //romanDigit = XIV
 *\endcode
 */
-std::string intToRoman(const int& number);
+std::string intToRoman(uint16_t number);
 
 /*!
 *\brief Разделяет дробь, записанную римской системе счисления, на числитель и знаменатель

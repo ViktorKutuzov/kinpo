@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set appPath=D:\_Projects\cpp\kinpo\x64\Debug\RomanFactionReducer.exe
+set appPath=D:\_Projects\cpp\kinpo\x64\Debug\RomanFractionReducer.exe
 set basePath=D:\_Projects\cpp\kinpo\tests
 
 for /L %%i in (1, 1, 10) do (
