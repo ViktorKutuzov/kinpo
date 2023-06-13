@@ -1,7 +1,0 @@
-<map id="romanDigits::reduceFraction" name="romanDigits::reduceFraction">
-<area shape="rect" id="Node000001" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="5,31,190,57"/>
-<area shape="rect" id="Node000002" href="$namespaceroman_digits.html#ae520e6c3925b121e2540cf929009210d" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="238,5,405,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,31,223,27,223,32,190,36"/>
-<area shape="rect" id="Node000003" href="$namespaceroman_digits.html#a604e4cad46fb55198ae9a9345850c13f" title="Переводит число из римской системы счисления в десятичную" alt="" coords="240,56,403,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="190,52,225,56,225,61,190,57"/>
-</map>

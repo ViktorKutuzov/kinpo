@@ -83,14 +83,10 @@ std::string checkNumber(const std::string& roman)
 
     uint16_t decimalNumber = romanToInt(romanNumber); //Перевести romanNumber в десятичное число;
     if (decimalNumber > 3999 || decimalNumber < 1) //Проверить корректность перевода
-    {
       return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
-    }
 
     if (romanNumber != intToRoman(decimalNumber)) //Проверить получившееся переводом число с частью исходного
-    {
       return "Символ " + std::string(1, roman[i]) + ", номер " + std::to_string(i + 1) + " в строке, не может идти после " + roman.substr(0, i);
-    }
   }
   return ""; //Вернуть пустую строку, так как ошибка не найдена.
 }

@@ -1,0 +1,7 @@
+<map id="reduceFraction" name="reduceFraction">
+<area shape="rect" id="Node000001" title="Главная функция. Проводит сокращение дроби, записанной в римской системе счисления" alt="" coords="5,31,113,57"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html#a11df20297fea2f3ef0bac45d963b88ac" title="Переводит число из десятичной системы счисления в римскую" alt="" coords="161,5,251,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,32,145,26,146,32,114,37"/>
+<area shape="rect" id="Node000003" href="$functions_8cpp.html#abe0ef095ecb61a086e090e639ca12b4f" title="Переводит число из римской системы счисления в десятичную" alt="" coords="163,56,249,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,51,149,57,148,62,113,56"/>
+</map>

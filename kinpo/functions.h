@@ -1,11 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <map>
 #include <unordered_map>
 #include <fstream>
 #include <numeric>
-#include <vector>
 
 /*!
 *\file

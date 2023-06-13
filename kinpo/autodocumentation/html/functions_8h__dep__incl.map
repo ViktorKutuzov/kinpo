@@ -1,0 +1,7 @@
+<map id="functions.h" name="functions.h">
+<area shape="rect" id="Node000001" title="Данный заголовочный файл содержит в себе описание основных функций, которые используются в программе." alt="" coords="67,5,151,32"/>
+<area shape="rect" id="Node000002" href="$functions_8cpp.html" title="Данный файл содержит в себе реализацию основных функций, которые используются в программе." alt="" coords="5,80,104,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,46,66,81,62,78,89,42"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Данный файл содержит главную управляющую функцию программы" alt="" coords="128,80,202,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,42,158,78,153,81,126,46"/>
+</map>

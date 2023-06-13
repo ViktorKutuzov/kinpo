@@ -29,13 +29,14 @@ FractionReducer.exe C:\\Documents\input.txt C:\\Documents\output.txt
 */
 int main (int argc, char* argv[])
 {
+  std::ios::sync_with_stdio(0); //Отключение сихронизации потоков ввода/вывода
+  std::cin.tie(0);
+  std::cout.tie(0);
   setlocale(LC_ALL, "Russian"); // Русская локализация консоли
   try
   {
     if (argv[1] == NULL || argv[2] == NULL) 
-    {
         throw std::runtime_error("Недостаточно параметров для запуска программы.");
-    }
 
     std::string roman{}; //Переменная для римской дроби
 
@@ -58,16 +59,12 @@ int main (int argc, char* argv[])
     // Проверяем числитель на корректность
     std::string error = checkNumber(romanNumerator);
     if (!error.empty())
-    {
       throw std::runtime_error("Числитель содержит ошибку в записи. " + error);
-    }
 
     // Проверяем знаменатель на корректность
     error = checkNumber(romanDenominator);
     if (!error.empty())
-    {
       throw std::runtime_error("Знаменатель содержит ошибку в записи. " + error);
-    }
 
     // Сокращаем дробь
     roman = reduceFraction(romanNumerator, romanDenominator);
